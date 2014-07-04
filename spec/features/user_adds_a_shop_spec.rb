@@ -36,4 +36,19 @@ feature "User creates a favorite restaurant" do
 
     expect(page).to have_content("Comment on this restaurant")
   end
+
+  scenario "User creates an a restaurant without a required field" do
+    user = FactoryGirl.create(:user)
+    restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
+    log_in(user)
+
+    fill_in 'Name', with: restaurant.name
+    fill_in 'Address', with: restaurant.address
+    fill_in 'City', with: restaurant.city
+    fill_in 'Zipcode', with: restaurant.zipcode
+
+    click_on "Create Restaurant"
+
+    expect(page).to have_content("That didnt go through!")
+  end
 end

@@ -12,7 +12,7 @@ class RestaurantsController < ApplicationController
       redirect_to restaurant_path(@restaurant)
     else
       flash[:notice] = "That didnt go through!"
-      render :new
+      redirect_to restaurants_path
     end
   end
 
