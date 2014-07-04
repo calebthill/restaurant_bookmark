@@ -14,7 +14,7 @@ feature "User creates a favorite restaurant" do
   # -upon successfully creating a restaurant, the user will be redirected
   #  to the restaurant they added or created. they will also see a flash message.
 
-  scenario "User creates a valid restaurant" do
+  scenario "User creates a valid restaurant and its added to their favorite restaurants" do
     user = FactoryGirl.create(:user)
     restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
     log_in(user)
@@ -33,8 +33,9 @@ feature "User creates a favorite restaurant" do
     expect(page).to have_content restaurant.city
     expect(page).to have_content restaurant.state
     expect(page).to have_content restaurant.zipcode
-
     expect(page).to have_content("Comment on this restaurant")
+
+    expect(FavoriteRestaurant.count).to eq(1)
   end
 
   scenario "User creates an a restaurant without a required field" do
