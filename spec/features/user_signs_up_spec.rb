@@ -20,7 +20,7 @@ feature "User can log in or sign up" do
     expect(page).to have_content("Sign Out")
   end
 
-  scenario "User does not fill out the form correctly" do
+  scenario "User does not enter email" do
     user = FactoryGirl.create(:user)
     visit new_user_registration_path
 
@@ -34,6 +34,24 @@ feature "User can log in or sign up" do
     click_button("Sign up")
 
     expect(page).to have_content("Email can't be blank")
+    expect(page).to_not have_content("Thanks for signing up!")
+  end
+
+  scenario "User passwords do not match" do
+    user = FactoryGirl.create(:user)
+    visit new_user_registration_path
+
+    click_on "Sign Up"
+
+    fill_in "First name", with: user.first_name
+    fill_in "Last name", with: user.last_name
+    fill_in "Email", with: "calebnthill123456@gmail.com"
+    fill_in "Password", with: user.password
+    fill_in "Password confirmation", with: "wrong_password"
+
+    click_button("Sign up")
+
+    expect(page).to have_content("Password confirmation doesn't match")
     expect(page).to_not have_content("Thanks for signing up!")
   end
 end
