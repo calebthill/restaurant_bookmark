@@ -6,4 +6,14 @@ FactoryGirl.define do
     password "123456789"
     password_confirmation "123456789"
   end
+
+  factory :restaurant do
+    name "Little Italia"
+    address "333 test dr"
+    city "Boston"
+    state "MA"
+    zipcode "444444"
+
+    user
+  end
 end
