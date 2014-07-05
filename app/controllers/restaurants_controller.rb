@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all #where(user_id: current_user)
+    @restaurants = Restaurant.all
     @restaurant = Restaurant.new
   end
 
