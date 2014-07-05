@@ -17,3 +17,10 @@
 
   <%= f.submit %>
 <% end %>
+
+<h2>Your Favorite Restaurants</h2>
+<ul>
+  <% @favorite_restaurants.each do |restaurant| %>
+    <li><%= restaurant.restaurant.name %></li>
+  <% end %>
+</ul>
