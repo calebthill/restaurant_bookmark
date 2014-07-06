@@ -5,17 +5,19 @@
 <%= @restaurant.state %>
 <%= @restaurant.zipcode %>
 
-<h4>Comment on this restaurant</h4>
-<%= form_for [@restaurant, @comment] do |f| %>
+<% if current_user.favorite_restaurants.include?(@restaurant) %>
+  <h4>Comment on this restaurant</h4>
+  <%= form_for [@restaurant, @comment] do |f| %>
 
-  <%= f.label :body %>
-  <%= f.text_field :body %>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
 
-  <%= f.submit "Create comment" %>
-<% end %>
-
-<ul>
-  <% @restaurant.comments.each do |comment| %>
-    <li><%= "#{comment.body}---- #{comment.user.first_name}" %></li>
+    <%= f.submit "Create comment" %>
   <% end %>
-</ul>
+
+  <ul>
+    <% @restaurant.comments.each do |comment| %>
+      <li><%= "#{comment.body}---- #{comment.user.first_name}" %></li>
+    <% end %>
+  </ul>
+<% end %>
