@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :favorite_restaurants, only: [:index, :new, :create, :show]
-  resources :restaurants, only: [:index, :new, :create, :show]
+  resources :restaurants, only: [:index, :new, :create, :show] do
+    resources :comments, only: [:create, :show ]
+  end
   # You can have the root of your site routed with "root"
   root 'pages#home'
 

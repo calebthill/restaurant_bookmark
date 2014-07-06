@@ -6,3 +6,10 @@
 <%= @restaurant.zipcode %>
 
 <h4>Comment on this restaurant</h4>
+<%= form_for [@restaurant, @comment] do |f| %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.submit "Create comment" %>
+<% end %>

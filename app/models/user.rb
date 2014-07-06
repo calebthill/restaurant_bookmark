@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :comments
   has_many :favorite_restaurants
   has_many :restaurants, through: :favorite_restaurants
   # Include default devise modules. Others available are:
