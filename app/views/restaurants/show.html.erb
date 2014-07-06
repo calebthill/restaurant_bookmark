@@ -17,7 +17,7 @@
 
   <ul>
     <% @restaurant.comments.each do |comment| %>
-      <li><%= "#{comment.body}---- #{comment.user.first_name}" %></li>
+      <li><%= "#{comment.body} ---- #{comment.user.first_name}" %></li>
     <% end %>
   </ul>
 <% end %>
