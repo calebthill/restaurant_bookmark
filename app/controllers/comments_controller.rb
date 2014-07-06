@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
       redirect_to restaurant_path(@comment.restaurant)
     else
       flash[:notice] = "That did not go through!"
-      render :new
+      redirect_to restaurant_path(@comment.restaurant)
     end
   end
 
