@@ -20,6 +20,8 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @comment = Comment.new
+    # @comments =  Comment.where(restaurant_id: params[:id])
+    # binding.pry
   end
 
   private

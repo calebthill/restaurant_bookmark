@@ -13,3 +13,9 @@
 
   <%= f.submit "Create comment" %>
 <% end %>
+
+<ul>
+  <% @restaurant.comments.each do |comment| %>
+    <li><%= "#{comment.body}---- #{comment.user.first_name}" %></li>
+  <% end %>
+</ul>
