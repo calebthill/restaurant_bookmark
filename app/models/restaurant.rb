@@ -6,4 +6,8 @@ class Restaurant < ActiveRecord::Base
   validates :address, presence: true
   validates :city, presence: true
   validates :state, presence: true
+
+  def is_favorite?(user)
+    user.restaurants.include?(self)
+  end
 end

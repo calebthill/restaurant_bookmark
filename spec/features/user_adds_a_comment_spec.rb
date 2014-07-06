@@ -56,4 +56,19 @@ feature "User creates a comment for one of their favorite restaurants" do
     click_on "Create comment"
     expect(page).to have_content("That did not go through!")
   end
+
+  scenario "A user doesnt see the comments unless its their favorite restaurant" do
+    user = FactoryGirl.create(:user)
+    user1 = FactoryGirl.create(:user)
+    restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
+    comment = FactoryGirl.create(:comment, restaurant_id: restaurant.id, user_id: user.id)
+
+    log_in(user1)
+
+    click_on "All restaurants"
+    click_on restaurant.name
+
+    expect(page).to have_content restaurant.name
+    expect(page).to_not have_content("Comment on this restaurant")
+  end
 end
