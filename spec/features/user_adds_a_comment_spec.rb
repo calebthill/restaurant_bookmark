@@ -65,7 +65,7 @@ feature "User creates a comment for one of their favorite restaurants" do
 
     log_in(user1)
 
-    click_on "All restaurants"
+    click_on "All Restaurants"
     click_on restaurant.name
 
     expect(page).to have_content restaurant.name
