@@ -13,7 +13,7 @@ feature "User creates a comment for one of their favorite restaurants" do
   # I must supply a comment body
   # If I don't fill in a required I am presented with an error.
   # If I don't have the restaurant favorited, I cannot add a comment.
-  scenario "A user creates a comment for their favorite restaurant succesfully", focus: true do
+  scenario "A user creates a comment for their favorite restaurant succesfully" do
     user = FactoryGirl.create(:user)
     restaurant = FactoryGirl.create(:restaurant, user: user)
     comment = FactoryGirl.build(:comment, restaurant: restaurant, user: user)
