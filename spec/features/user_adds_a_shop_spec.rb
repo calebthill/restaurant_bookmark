@@ -16,7 +16,8 @@ feature "User creates a favorite restaurant" do
 
   scenario "User creates a valid restaurant and its added to their favorite restaurants" do
     user = FactoryGirl.create(:user)
-    restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
+    restaurant = FactoryGirl.build(:restaurant, user: user)
+    previous_count = FavoriteRestaurant.count
     log_in(user)
 
     fill_in 'Name', with: restaurant.name
@@ -35,12 +36,12 @@ feature "User creates a favorite restaurant" do
     expect(page).to have_content restaurant.zipcode
     expect(page).to have_content("Comment on this restaurant")
 
-    expect(FavoriteRestaurant.count).to eq(1)
+    expect(FavoriteRestaurant.count).to eq(previous_count + 1)
   end
 
   scenario "User creates an a restaurant without a required field" do
     user = FactoryGirl.create(:user)
-    restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
+    restaurant = FactoryGirl.create(:restaurant, user: user)
     log_in(user)
 
     fill_in 'Name', with: restaurant.name

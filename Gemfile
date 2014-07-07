@@ -37,6 +37,9 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'dotenv-rails'
   gem 'launchy'
+  gem 'shoulda-matchers'
+  gem 'valid_attribute'
+  gem 'database_cleaner'
 end
 
 # Use ActiveModel has_secure_password

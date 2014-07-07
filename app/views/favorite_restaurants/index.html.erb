@@ -1,28 +1,29 @@
-<p>Add your favorite restaurant</p>
-<%= form_for @restaurant do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-
-  <%= f.label :city %>
-  <%= f.text_field :city %>
-
-  <%= f.label :state %>
-  <%= f.text_field :state %>
-
-  <%= f.label :zipcode %>
-  <%= f.text_field :zipcode %>
-
-  <%= f.submit %>
-<% end %>
-
 <h2>Your Favorite Restaurants</h2>
 <ul>
   <% @favorite_restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.restaurant.name, restaurant_path(restaurant) %></li>
+    <li class= "list_items"><%= link_to restaurant.restaurant.name, restaurant_path(restaurant) %></li>
   <% end %>
 </ul>
 
-<%= link_to "All restaurants", restaurants_path %>
+
+<h4>Add your favorite restaurant</h4>
+<%= form_for @restaurant do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %><br>
+
+  <%= f.label :address %>
+  <%= f.text_field :address, class: "form-control" %><br>
+
+  <%= f.label :city %>
+  <%= f.text_field :city, class: "form-control" %><br>
+
+  <%= f.label :state %>
+  <%= f.text_field :state, class: "form-control" %><br>
+
+  <%= f.label :zipcode %>
+  <%= f.text_field :zipcode, class: "form-control" %><br>
+
+  <%= f.submit class: "btn btn-default" %>
+<% end %>
+
+

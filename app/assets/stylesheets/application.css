@@ -12,4 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
  */
+
+.list_items {
+  font-size: 1.3em;
+}
