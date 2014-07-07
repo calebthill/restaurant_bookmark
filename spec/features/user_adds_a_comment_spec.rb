@@ -32,17 +32,10 @@ feature "User creates a comment for one of their favorite restaurants" do
   scenario "A user creates a comment for their favorite restaurant without a body" do
     user = FactoryGirl.create(:user)
     restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
-    comment = FactoryGirl.create(:comment, restaurant_id: restaurant.id, user_id: user.id)
+    comment = FactoryGirl.build(:comment, restaurant_id: restaurant.id, user_id: user.id)
     log_in(user)
 
-
-    fill_in 'Name', with: restaurant.name
-    fill_in 'Address', with: restaurant.address
-    fill_in 'City', with: restaurant.city
-    fill_in 'State', with: restaurant.state
-    fill_in 'Zipcode', with: restaurant.zipcode
-
-    click_on "Create Restaurant"
+    visit restaurant_path(restaurant)
 
     expect(page).to have_content("Comment on this restaurant")
 
@@ -53,8 +46,8 @@ feature "User creates a comment for one of their favorite restaurants" do
   scenario "A user doesnt see the comments unless its their favorite restaurant" do
     user = FactoryGirl.create(:user)
     user1 = FactoryGirl.create(:user)
-    restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
-    comment = FactoryGirl.create(:comment, restaurant_id: restaurant.id, user_id: user.id)
+    restaurant = FactoryGirl.create(:restaurant, user: user)
+    comment = FactoryGirl.build(:comment, restaurant: restaurant, user: user)
 
     log_in(user1)
 
