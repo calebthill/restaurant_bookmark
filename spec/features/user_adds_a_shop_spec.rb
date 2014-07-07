@@ -16,7 +16,7 @@ feature "User creates a favorite restaurant" do
 
   scenario "User creates a valid restaurant and its added to their favorite restaurants" do
     user = FactoryGirl.create(:user)
-    restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
+    restaurant = FactoryGirl.create(:restaurant, user: user)
     log_in(user)
 
     fill_in 'Name', with: restaurant.name

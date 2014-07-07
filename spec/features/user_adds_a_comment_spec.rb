@@ -13,22 +13,15 @@ feature "User creates a comment for one of their favorite restaurants" do
   # I must supply a comment body
   # If I don't fill in a required I am presented with an error.
   # If I don't have the restaurant favorited, I cannot add a comment.
-  scenario "A user creates a comment for their favorite restaurant succesfully" do
+  scenario "A user creates a comment for their favorite restaurant succesfully", focus: true do
     user = FactoryGirl.create(:user)
-    restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
-    comment = FactoryGirl.create(:comment, restaurant_id: restaurant.id, user_id: user.id)
+    restaurant = FactoryGirl.create(:restaurant, user: user)
+    comment = FactoryGirl.build(:comment, restaurant: restaurant, user: user)
     log_in(user)
 
-
-    fill_in 'Name', with: restaurant.name
-    fill_in 'Address', with: restaurant.address
-    fill_in 'City', with: restaurant.city
-    fill_in 'State', with: restaurant.state
-    fill_in 'Zipcode', with: restaurant.zipcode
-
-    click_on "Create Restaurant"
-
+    visit restaurant_path(restaurant)
     expect(page).to have_content("Comment on this restaurant")
+
     fill_in "Body", with: comment.body
     click_on "Create comment"
 
