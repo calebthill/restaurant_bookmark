@@ -5,6 +5,7 @@
 <%= @restaurant.state %>
 <%= @restaurant.zipcode %>
 
+
 <% if @restaurant.is_favorite?(current_user) %>
   <h4>Comment on this restaurant</h4>
   <%= form_for [@restaurant, @comment] do |f| %>
