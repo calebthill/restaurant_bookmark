@@ -36,7 +36,7 @@ feature "User creates a favorite restaurant" do
     expect(page).to have_content restaurant.zipcode
     expect(page).to have_content("Comment on this restaurant")
 
-    expect(FavoriteRestaurant.count).to eq(previous_count + 2)
+    expect(FavoriteRestaurant.count).to eq(previous_count + 1)
   end
 
   scenario "User creates an a restaurant without a required field" do
