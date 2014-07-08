@@ -20,7 +20,6 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    binding.pry
     @restaurant = Restaurant.find(params[:id])
     @comment = Comment.new
   end

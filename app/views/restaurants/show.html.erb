@@ -5,7 +5,12 @@
 <%= @restaurant.state %>
 <%= @restaurant.zipcode %>
 
+<% if @restaurant.is_favorite?(current_user) %>
+<%= button_to "Remove from Favorites", favorite_restaurant_path(@restaurant), method: :delete %>
+<% else %>
+
 <%= button_to "Add to Favorites", { controller: :favorite_restaurants, restaurant_id: @restaurant}, method: :post %>
+<% end %>
 
 <% if @restaurant.is_favorite?(current_user) %>
   <h4>Comment on this restaurant</h4>
