@@ -5,6 +5,7 @@
 <%= @restaurant.state %>
 <%= @restaurant.zipcode %>
 
+<%= button_to "Add to Favorites", { controller: :favorite_restaurants, restaurant_id: @restaurant}, method: :post %>
 
 <% if @restaurant.is_favorite?(current_user) %>
   <h4>Comment on this restaurant</h4>
