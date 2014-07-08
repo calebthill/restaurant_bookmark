@@ -28,6 +28,8 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+gem 'yelpster'
+
 
 
 group :test, :development do

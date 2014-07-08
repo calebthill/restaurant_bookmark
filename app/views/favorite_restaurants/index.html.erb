@@ -5,6 +5,23 @@
   <% end %>
 </ul>
 
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:term, "Restaurant Name") %>
+  <%= text_field_tag(:term) %>
+
+  <%= label_tag(:city, "City") %>
+  <%= text_field_tag(:city) %>
+
+  <%= label_tag(:state, "State") %>
+  <%= text_field_tag(:state) %>
+
+  <%= submit_tag("Search") %>
+<% end %>
+
+
+
+
+
 
 <h4>Add your favorite restaurant</h4>
 <%= form_for @restaurant do |f| %>

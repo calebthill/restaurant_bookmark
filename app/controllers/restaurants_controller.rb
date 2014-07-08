@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  include Yelp::V1::Review::Request
   before_action :authenticate_user!
 
   def index
@@ -21,6 +22,18 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @comment = Comment.new
+  end
+
+  def search
+    client = Yelp::Client.new
+    request = Location.new(
+      :term => params["term"],
+      :city => params["city"],
+      :state => params["state"]
+      )
+    # binding.pry
+    @restaurants = client.search(request)
+    binding.pry
   end
 
   private
