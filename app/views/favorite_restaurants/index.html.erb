@@ -1,9 +1,13 @@
+<% if current_user.restaurants == [] %>
+<h2>You don't have any Favorite Restaurants</h2>
+<% else %>
 <h2>Your Favorite Restaurants</h2>
 <ul>
   <% @favorite_restaurants.each do |restaurant| %>
     <li class= "list_items"><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
   <% end %>
 </ul>
+<% end %>
 
 
 <h4>Add your favorite restaurant</h4>
