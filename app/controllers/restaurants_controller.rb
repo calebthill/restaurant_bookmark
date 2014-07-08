@@ -10,7 +10,6 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new(restaurant_params)
     @restaurant.user_id = current_user.id
     if @restaurant.save
-      #FavoriteRestaurant.create(user: current_user, restaurant: @restaurant)
       flash[:notice] = "You just created a restaurant!"
       redirect_to restaurant_path(@restaurant)
     else
