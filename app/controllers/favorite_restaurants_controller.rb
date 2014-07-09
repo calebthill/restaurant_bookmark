@@ -1,4 +1,5 @@
 class FavoriteRestaurantsController < ApplicationController
+  #before_action :search
   def index
     @restaurant = Restaurant.new
     @favorite_restaurants = current_user.restaurants

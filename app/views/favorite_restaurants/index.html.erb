@@ -18,10 +18,11 @@
   <%= submit_tag("Search") %>
 <% end %>
 
-
-
-
-
+<% if defined?(@restaurants) != nil %>
+  <% @restaurants["businesses"].each do |restaurant| %>
+    <li><%= "#{restaurant["name"]} - #{restaurant["city"]}" %></li>
+  <% end %>
+<% end %>
 
 <h4>Add your favorite restaurant</h4>
 <%= form_for @restaurant do |f| %>

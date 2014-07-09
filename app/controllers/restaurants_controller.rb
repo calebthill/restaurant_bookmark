@@ -26,14 +26,17 @@ class RestaurantsController < ApplicationController
 
   def search
     client = Yelp::Client.new
-    request = Location.new(
-      :term => params["term"],
-      :city => params["city"],
-      :state => params["state"]
-      )
-    # binding.pry
-    @restaurants = client.search(request)
-    binding.pry
+    yelp_request = Location.new(
+        :term => params["term"],
+        :city => params["city"],
+        :state => params["state"]
+        )
+      # binding.pry
+    @restaurant = Restaurant.new
+    @favorite_restaurants = current_user.restaurants
+    @restaurants = client.search(yelp_request)
+    # redirect_to favorite_restaurants_path
+    render :'favorite_restaurants/index'
   end
 
   private
