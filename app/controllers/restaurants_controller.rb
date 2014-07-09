@@ -9,13 +9,14 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    binding.pry
     @restaurant.user_id = current_user.id
     if @restaurant.save
       flash[:notice] = "You just created a restaurant!"
       redirect_to restaurant_path(@restaurant)
     else
       flash[:notice] = "That didnt go through!"
-      redirect_to restaurants_path
+      render :show#redirect_to restaurants_path
     end
   end
 

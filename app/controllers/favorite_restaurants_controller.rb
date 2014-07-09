@@ -7,6 +7,9 @@ class FavoriteRestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
+
+
+    #Ruby logic ^
     @favorite_restaurant = FavoriteRestaurant.new(user_id: current_user.id,
                                                  restaurant_id: params[:restaurant_id])
     if @favorite_restaurant.save

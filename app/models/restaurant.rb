@@ -1,6 +1,4 @@
 class Restaurant < ActiveRecord::Base
-  include ActiveModel::Model
-  attr_accessor :city, :state, :term
 
   belongs_to :user
   has_many :favorite_restaurants
