@@ -15,7 +15,7 @@ class RestaurantsController < ApplicationController
       redirect_to restaurant_path(@restaurant)
     else
       flash[:notice] = "That didnt go through!"
-      render :show#redirect_to restaurants_path
+      render :show
     end
   end
 
@@ -31,11 +31,10 @@ class RestaurantsController < ApplicationController
         :city => params["city"],
         :state => params["state"]
         )
-      # binding.pry
     @restaurant = Restaurant.new
     @favorite_restaurants = current_user.restaurants
     @restaurants = client.search(yelp_request)
-    # redirect_to favorite_restaurants_path
+
     render :'favorite_restaurants/index'
   end
 

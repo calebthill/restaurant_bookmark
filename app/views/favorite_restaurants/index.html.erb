@@ -23,7 +23,10 @@
     <li><%= "#{restaurant["name"]} - #{restaurant["city"]}" %>
         <%= link_to "★", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"]}, phone: restaurant["phone"], zipcode: restaurant["zipcode"], method: :post %></li>
   <% end %>
+  <h5> class= "show_manual_restaurant">Not what you were looking for?</h5>
 <% end %>
+
+
 
 <div class="manual_restaurant">
   <h4>Add your favorite restaurant</h4>
