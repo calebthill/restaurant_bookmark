@@ -22,7 +22,6 @@ class FavoriteRestaurantsController < ApplicationController
                                                  city: params["city"], state: params["state"],
                                                  zipcode: params["zipcode"], phone: params["phone"],
                                                  rating: params["rating"], user_id: current_user.id)
-      binding.pry
       redirect_to restaurant_path(@restaurant)
     end
   end
