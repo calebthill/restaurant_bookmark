@@ -42,6 +42,7 @@ group :test, :development do
   gem 'shoulda-matchers'
   gem 'valid_attribute'
   gem 'database_cleaner'
+  gem 'vcr'
 end
 
 # Use ActiveModel has_secure_password
