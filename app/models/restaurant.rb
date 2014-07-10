@@ -17,7 +17,7 @@ class Restaurant < ActiveRecord::Base
   end
 
   private
-    def add_favorite
-      user.restaurants << self
-    end
+  def add_favorite
+    user.restaurants << self
+  end
 end

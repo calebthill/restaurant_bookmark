@@ -21,7 +21,7 @@
 <% if @restaurants %>
   <% @restaurants["businesses"].each do |restaurant| %>
     <li><%= "#{restaurant["name"]} - #{restaurant["city"]}" %>
-        <%= link_to "favorite", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"]}, phone: restaurant["phone"], method: :post %></li>
+        <%= link_to "favorite", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"]}, phone: restaurant["phone"], zipcode: restaurant["zipcode"], method: :post %></li>
   <% end %>
 <% end %>
 
