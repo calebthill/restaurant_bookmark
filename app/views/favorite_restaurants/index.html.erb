@@ -1,9 +1,15 @@
-<h2>Your Favorite Restaurants</h2>
-<ul>
-  <% @favorite_restaurants.each do |restaurant| %>
-    <li class= "list_items"><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
-  <% end %>
-</ul>
+<% if current_user.restaurants == [] %>
+  <h2>You don't have any Favorite Restaurants yet!</h2>
+  <p>Go Ahead... Add some!</p>
+<% else %>
+
+  <h2>Your Favorite Restaurants</h2>
+  <ul>
+    <% @favorite_restaurants.each do |restaurant| %>
+      <li class= "list_items"><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_tag "/search", method: :get, class: :search do %>
   <%= label_tag :term, "Restaurant Name"  %>
@@ -28,7 +34,7 @@
 
 
 <div class="manual_restaurant">
-  <h4>Add your favorite restaurant</h4>
+  <h4>Add your favorite restaurant manually!</h4>
   <%= form_for @restaurant do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %><br>
