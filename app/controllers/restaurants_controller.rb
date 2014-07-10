@@ -4,7 +4,6 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.order(:name).page params[:page]
-    #@restaurants = Restaurant.all
     @restaurant = Restaurant.new
   end
 
