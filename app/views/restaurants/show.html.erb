@@ -1,4 +1,6 @@
 <h2><%= @restaurant.name %></h2>
+<p><strong>Phone:</strong> <%= @restaurant.phone.insert(3, "-").insert(7, "-") %></p>
+
 
 <%= @restaurant.address %><br>
 <%= @restaurant.city %>
