@@ -5,23 +5,23 @@
   <% end %>
 </ul>
 
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:term, "Restaurant Name") %>
-  <%= text_field_tag(:term) %>
+<%= form_tag "/search", method: "get" do %>
+  <%= label_tag :term, "Restaurant Name"  %>
+  <%= text_field_tag :term %>
 
-  <%= label_tag(:city, "City") %>
-  <%= text_field_tag(:city) %>
+  <%= label_tag :city, "City" %>
+  <%= text_field_tag :city %>
 
-  <%= label_tag(:state, "State") %>
-  <%= text_field_tag(:state) %>
+  <%= label_tag :state, "State" %>
+  <%= text_field_tag :state %>
 
-  <%= submit_tag("Search") %>
+  <%= submit_tag "Search", class: "btn btn-default" %>
 <% end %>
 
 <% if @restaurants %>
   <% @restaurants["businesses"].each do |restaurant| %>
     <li><%= "#{restaurant["name"]} - #{restaurant["city"]}" %>
-        <%= link_to "favorite", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"]}, phone: restaurant["phone"], zipcode: restaurant["zipcode"], method: :post %></li>
+        <%= link_to "★", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"]}, phone: restaurant["phone"], zipcode: restaurant["zipcode"], method: :post %></li>
   <% end %>
 <% end %>
 
