@@ -9,7 +9,6 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    binding.pry
     @restaurant.user_id = current_user.id
     if @restaurant.save
       flash[:notice] = "You just created a restaurant!"

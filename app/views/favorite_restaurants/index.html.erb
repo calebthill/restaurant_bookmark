@@ -5,7 +5,7 @@
   <% end %>
 </ul>
 
-<%= form_tag "/search", method: "get" do %>
+<%= form_tag "/search", method: :get, class: :search do %>
   <%= label_tag :term, "Restaurant Name"  %>
   <%= text_field_tag :term %>
 

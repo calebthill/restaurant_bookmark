@@ -43,6 +43,7 @@ group :test, :development do
   gem 'valid_attribute'
   gem 'database_cleaner'
   gem 'vcr'
+  gem 'webmock'
 end
 
 # Use ActiveModel has_secure_password

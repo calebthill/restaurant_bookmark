@@ -20,13 +20,15 @@ feature "User creates a favorite restaurant" do
     previous_count = FavoriteRestaurant.count
     log_in(user)
 
-    fill_in 'Name', with: restaurant.name
-    fill_in 'Address', with: restaurant.address
-    fill_in 'City', with: restaurant.city
-    fill_in 'State', with: restaurant.state
-    fill_in 'Zipcode', with: restaurant.zipcode
+    within '.new_restaurant' do
+      fill_in 'Name', with: restaurant.name
+      fill_in 'Address', with: restaurant.address
+      fill_in 'City', with: restaurant.city
+      fill_in 'State', with: restaurant.state
+      fill_in 'Zipcode', with: restaurant.zipcode
 
-    click_on "Create Restaurant"
+      click_on "Create Restaurant"
+    end
 
     expect(page).to have_content("You just created a restaurant!")
     expect(page).to have_content restaurant.name
@@ -44,12 +46,14 @@ feature "User creates a favorite restaurant" do
     restaurant = FactoryGirl.create(:restaurant, user: user)
     log_in(user)
 
-    fill_in 'Name', with: restaurant.name
-    fill_in 'Address', with: restaurant.address
-    fill_in 'City', with: restaurant.city
-    fill_in 'Zipcode', with: restaurant.zipcode
+    within '.new_restaurant' do
+      fill_in 'Name', with: restaurant.name
+      fill_in 'Address', with: restaurant.address
+      fill_in 'City', with: restaurant.city
+      fill_in 'Zipcode', with: restaurant.zipcode
 
-    click_on "Create Restaurant"
+      click_on "Create Restaurant"
+    end
 
     expect(page).to have_content("That didnt go through!")
   end
