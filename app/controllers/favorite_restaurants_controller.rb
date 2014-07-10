@@ -21,7 +21,7 @@ class FavoriteRestaurantsController < ApplicationController
       @restaurant = Restaurant.find_or_create_by(name: params["restaurant"], address: params["address"],
                                                  city: params["city"], state: params["state"],
                                                  zipcode: params["zipcode"], phone: params["phone"],
-                                                 rating: params["rating"], user_id: current_user.id)
+                                                 rating: params["rating"], yelp_review: params["yelp_review"], user_id: current_user.id)
       redirect_to restaurant_path(@restaurant)
     end
   end
