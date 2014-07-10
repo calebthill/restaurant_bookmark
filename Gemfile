@@ -28,6 +28,8 @@ gem 'devise'
 
 gem 'yelpster'
 
+gem 'kaminari'
+
 group :test, :development do
   gem 'capybara'
   gem 'pry-rails'

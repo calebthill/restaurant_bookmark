@@ -3,7 +3,8 @@ class RestaurantsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.order(:name).page params[:page]
+    #@restaurants = Restaurant.all
     @restaurant = Restaurant.new
   end
 
