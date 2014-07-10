@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  include Yelp::V1::Review::Request
   before_action :authenticate_user!
 
   def index
@@ -14,13 +15,27 @@ class RestaurantsController < ApplicationController
       redirect_to restaurant_path(@restaurant)
     else
       flash[:notice] = "That didnt go through!"
-      redirect_to restaurants_path
+      render :show
     end
   end
 
   def show
     @restaurant = Restaurant.find(params[:id])
     @comment = Comment.new
+  end
+
+  def search
+    client = Yelp::Client.new
+    yelp_request = Location.new(
+        :term => params["term"],
+        :city => params["city"],
+        :state => params["state"]
+        )
+    @restaurant = Restaurant.new
+    @favorite_restaurants = current_user.restaurants
+    @restaurants = client.search(yelp_request)
+
+    render :'favorite_restaurants/index'
   end
 
   private

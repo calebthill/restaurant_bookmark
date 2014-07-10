@@ -5,25 +5,48 @@
   <% end %>
 </ul>
 
+<%= form_tag "/search", method: :get, class: :search do %>
+  <%= label_tag :term, "Restaurant Name"  %>
+  <%= text_field_tag :term %>
 
-<h4>Add your favorite restaurant</h4>
-<%= form_for @restaurant do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, class: "form-control" %><br>
+  <%= label_tag :city, "City" %>
+  <%= text_field_tag :city %>
 
-  <%= f.label :address %>
-  <%= f.text_field :address, class: "form-control" %><br>
+  <%= label_tag :state, "State" %>
+  <%= text_field_tag :state %>
 
-  <%= f.label :city %>
-  <%= f.text_field :city, class: "form-control" %><br>
-
-  <%= f.label :state %>
-  <%= f.text_field :state, class: "form-control" %><br>
-
-  <%= f.label :zipcode %>
-  <%= f.text_field :zipcode, class: "form-control" %><br>
-
-  <%= f.submit class: "btn btn-default" %>
+  <%= submit_tag "Search", class: "btn btn-default" %>
 <% end %>
+
+<% if @restaurants %>
+  <% @restaurants["businesses"].each do |restaurant| %>
+    <li><%= "#{restaurant["name"]} - #{restaurant["city"]}" %>
+        <%= link_to "★", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"]}, phone: restaurant["phone"], zipcode: restaurant["zipcode"], method: :post %></li>
+  <% end %>
+  <h5><a href="#" class= "show_manual_restaurant">Not what your looking for?</a></h5>
+<% end %>
+
+
+<div class="manual_restaurant">
+  <h4>Add your favorite restaurant</h4>
+  <%= form_for @restaurant do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %><br>
+
+    <%= f.label :address %>
+    <%= f.text_field :address, class: "form-control" %><br>
+
+    <%= f.label :city %>
+    <%= f.text_field :city, class: "form-control" %><br>
+
+    <%= f.label :state %>
+    <%= f.text_field :state, class: "form-control" %><br>
+
+    <%= f.label :zipcode %>
+    <%= f.text_field :zipcode, class: "form-control" %><br>
+
+    <%= f.submit class: "btn btn-default" %>
+  <% end %>
+</div>
 
 

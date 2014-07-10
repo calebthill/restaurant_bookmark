@@ -1,4 +1,5 @@
 class Restaurant < ActiveRecord::Base
+
   belongs_to :user
   has_many :favorite_restaurants
   has_many :users, through: :favorite_restaurants
@@ -16,7 +17,7 @@ class Restaurant < ActiveRecord::Base
   end
 
   private
-    def add_favorite
-      user.restaurants << self
-    end
+  def add_favorite
+    user.restaurants << self
+  end
 end
