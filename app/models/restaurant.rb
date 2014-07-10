@@ -1,4 +1,5 @@
 class Restaurant < ActiveRecord::Base
+  paginates_per 15
 
   belongs_to :user
   has_many :favorite_restaurants
