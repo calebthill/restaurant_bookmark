@@ -7,7 +7,3 @@ $(document).ready( function() {
 });
 
 
-$(".manual_restaurant").hover(function(){
-  $(".manual_restaurant").css('cursor', 'pointer');
-})
-
