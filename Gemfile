@@ -30,6 +30,8 @@ gem 'yelpster'
 
 gem 'kaminari'
 
+gem 'geocoder'
+
 group :production, :staging do
   gem 'rails_12factor'
 end
