@@ -1,6 +1,7 @@
 <h2><%= @restaurant.name %></h2>
-
-<img src= <%= @restaurant.yelp_review %> alt="yelp stars">
+<% if @restaurant.yelp_review %>
+  <img src= <%= @restaurant.yelp_review %> alt="yelp stars">
+<% end %>
 
 <% if @restaurant.phone %>
   <p><strong>Phone:</strong> <%= @restaurant.phone.insert(3, "-").insert(7, "-") %></p>
@@ -10,6 +11,8 @@
 <%= @restaurant.city %>
 <%= @restaurant.state %>
 <%= @restaurant.zipcode %>
+
+
 
 <% if @restaurant.is_favorite?(current_user) %>
   <%= button_to "Remove from Favorites", favorite_restaurant_path(@restaurant), method: :delete, class: "btn btn-default" %>
