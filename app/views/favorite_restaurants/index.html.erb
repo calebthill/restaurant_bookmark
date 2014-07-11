@@ -12,27 +12,28 @@
   </ul>
 <% end %>
 
+<div class="yelp_search_and_results">
+  <%= form_tag "/search", method: :get, class: :search do %>
+    <%= label_tag :term, "Restaurant Name"  %>
+    <%= text_field_tag :term %>
 
-<%= form_tag "/search", method: :get, class: :search do %>
-  <%= label_tag :term, "Restaurant Name"  %>
-  <%= text_field_tag :term %>
+    <%= label_tag :city, "City" %>
+    <%= text_field_tag :city %>
 
-  <%= label_tag :city, "City" %>
-  <%= text_field_tag :city %>
+    <%= label_tag :state, "State" %>
+    <%= text_field_tag :state %>
 
-  <%= label_tag :state, "State" %>
-  <%= text_field_tag :state %>
-
-  <%= submit_tag "Search", class: "btn btn-default" %>
-<% end %>
-
-<% if @restaurants %>
-  <% @restaurants["businesses"].each do |restaurant| %>
-    <li><%= "#{restaurant["name"]} - #{restaurant["city"]}" %>
-        <%= link_to "★", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"], phone: restaurant["phone"], zipcode: restaurant["zipcode"], rating: restaurant["avg_rating"], yelp_review: restaurant["rating_img_url"]}, method: :post %></li>
+    <%= submit_tag "Search", class: "btn btn-default" %>
   <% end %>
-  <h5><a href="#" class= "show_manual_restaurant">Not what your looking for?</a></h5>
-<% end %>
+
+  <% if @restaurants %>
+    <% @restaurants["businesses"].each do |restaurant| %>
+      <li><%= "#{restaurant["name"]} - #{restaurant["city"]}" %>
+          <%= link_to "★", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"], phone: restaurant["phone"], zipcode: restaurant["zipcode"], rating: restaurant["avg_rating"], yelp_review: restaurant["rating_img_url"]}, method: :post %></li>
+    <% end %>
+    <h5><a href="#" class= "show_manual_restaurant">Not what your looking for?</a></h5>
+  <% end %>
+</div>
 
 
 <div class="manual_restaurant">
