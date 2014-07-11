@@ -1,4 +1,7 @@
 class Restaurant < ActiveRecord::Base
+  geocoded_by :full_address
+  after_validation :geocode, :if => :address_changed?
+
   paginates_per 15
 
   belongs_to :user
@@ -15,6 +18,10 @@ class Restaurant < ActiveRecord::Base
 
   def is_favorite?(user)
     user.restaurants.include?(self)
+  end
+
+  def full_address
+    "#{address} #{city} #{state} #{zipcode}"
   end
 
   private
