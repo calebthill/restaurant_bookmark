@@ -1,9 +1,10 @@
 <h2><%= @restaurant.name %></h2>
+
 <% if @restaurant.yelp_review %>
   <img src= <%= @restaurant.yelp_review %> alt="yelp stars">
 <% end %>
 
-<% if @restaurant.phone %>
+<% if @restaurant.phone != "" %>
   <p><strong>Phone:</strong> <%= @restaurant.phone.insert(3, "-").insert(7, "-") %></p>
 <% end %>
 
