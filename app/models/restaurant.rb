@@ -1,6 +1,5 @@
 class Restaurant < ActiveRecord::Base
-  #attr_accessible :address
-  geocoded_by :address
+  geocoded_by :full_address
   after_validation :geocode, :if => :address_changed?
 
   paginates_per 15
