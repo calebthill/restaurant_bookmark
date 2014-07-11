@@ -7,10 +7,11 @@
   <ul>
     <% @favorite_restaurants.each do |restaurant| %>
       <li class= "list_items"><%= link_to restaurant.name, restaurant_path(restaurant) %>
-      <img src ="<%= restaurant.yelp_review %>"></li>
+      <img src ="<%= restaurant.yelp_review %>" class="yelp_stars"></li>
     <% end %>
   </ul>
 <% end %>
+
 
 <%= form_tag "/search", method: :get, class: :search do %>
   <%= label_tag :term, "Restaurant Name"  %>

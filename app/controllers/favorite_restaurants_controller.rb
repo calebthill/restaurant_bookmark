@@ -2,7 +2,7 @@ class FavoriteRestaurantsController < ApplicationController
   #before_action :search
   def index
     @restaurant = Restaurant.new
-    @favorite_restaurants = current_user.restaurants
+    @favorite_restaurants = current_user.restaurants.order(rating: :desc).page params[:page]
   end
 
   def create
