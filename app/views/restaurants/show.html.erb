@@ -1,5 +1,9 @@
 <h2><%= @restaurant.name %></h2>
 
+<% if @restaurant.latitude && @restaurant.longitude %>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@restaurant.latitude}%2C#{@restaurant.longitude}" %><br>
+<% end %>
+
 <% if @restaurant.yelp_review %>
   <img src= <%= @restaurant.yelp_review %> alt="yelp stars">
 <% end %>
@@ -12,7 +16,6 @@
 <%= @restaurant.city %>
 <%= @restaurant.state %>
 <%= @restaurant.zipcode %>
-
 
 
 <% if @restaurant.is_favorite?(current_user) %>

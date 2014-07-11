@@ -20,8 +20,8 @@ class Restaurant < ActiveRecord::Base
     user.restaurants.include?(self)
   end
 
-  def full_address(address, city, state, zip)
-    "#{address} #{city} #{state} #{zip}"
+  def full_address
+    "#{address} #{city} #{state} #{zipcode}"
   end
 
   private
