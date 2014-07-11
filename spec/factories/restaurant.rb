@@ -5,6 +5,7 @@ FactoryGirl.define do
     city "Boston"
     state "MA"
     zipcode "444444"
+    phone "8167398888"
 
     user
   end

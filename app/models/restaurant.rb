@@ -17,6 +17,10 @@ class Restaurant < ActiveRecord::Base
     user.restaurants.include?(self)
   end
 
+  def format_phone(phone)
+    phone.insert(3,"-").insert(7,"-")
+  end
+
   private
   def add_favorite
     user.restaurants << self

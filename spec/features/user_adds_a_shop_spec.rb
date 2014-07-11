@@ -26,6 +26,7 @@ feature "User creates a favorite restaurant" do
       fill_in 'City', with: restaurant.city
       fill_in 'State', with: restaurant.state
       fill_in 'Zipcode', with: restaurant.zipcode
+      fill_in 'Phone', with: restaurant.phone
 
       click_on "Create Restaurant"
     end
