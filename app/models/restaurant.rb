@@ -1,4 +1,5 @@
 class Restaurant < ActiveRecord::Base
+  #attr_accessible :address
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
@@ -18,6 +19,10 @@ class Restaurant < ActiveRecord::Base
 
   def is_favorite?(user)
     user.restaurants.include?(self)
+  end
+
+  def full_address(address, city, state, zip)
+    "#{address} #{city} #{state} #{zip}"
   end
 
   private

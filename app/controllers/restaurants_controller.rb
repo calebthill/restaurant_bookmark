@@ -21,6 +21,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    full_address = @restaurant.full_address(@restaurant.address, @restaurant.city, @restaurant.state, @restaurant.zipcode)
     @comment = Comment.new
   end
 
