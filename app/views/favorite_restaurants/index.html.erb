@@ -6,7 +6,8 @@
   <h2>Your Favorite Restaurants</h2>
   <ul>
     <% @favorite_restaurants.each do |restaurant| %>
-      <li class= "list_items"><%= link_to restaurant.name, restaurant_path(restaurant) %> <img src ="<%= restaurant.yelp_review %>"></li>
+      <li class= "list_items"><%= link_to restaurant.name, restaurant_path(restaurant) %>
+      <img src ="<%= restaurant.yelp_review %>"></li>
     <% end %>
   </ul>
 <% end %>

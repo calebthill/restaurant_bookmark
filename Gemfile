@@ -30,6 +30,10 @@ gem 'yelpster'
 
 gem 'kaminari'
 
+group :production, :staging do
+  gem 'rails_12factor'
+end
+
 group :test, :development do
   gem 'capybara'
   gem 'pry-rails'
