@@ -1,24 +1,72 @@
-<h2>Sign up</h2>
+<body class="sign_up_body">
+  <div class="sign_up_sign_in">
+    <h2>Sign up</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="form-group">
+      <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+      <div><%= f.label :first_name %><br />
+      <%= f.text_field :first_name, autofocus: true %></div>
 
-  <div><%= f.label :first_name %><br />
-  <%= f.text_field :first_name, autofocus: true %></div>
+      <div><%= f.label :last_name %><br />
+      <%= f.text_field :last_name, autofocus: true %></div>
 
-  <div><%= f.label :last_name %><br />
-  <%= f.text_field :last_name, autofocus: true %></div>
+      <div><%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+      <div><%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" %></div>
 
-  <div><%= f.label :password %><br />
+      <div><%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+      <div><%= f.submit "Sign up", class: "btn btn-default" %></div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</body>
+
+
+<div class="modal hide fade in" id="sign_up">
+  <div class="modal-header">
+    <button class="close", data-dismiss="modal">x</button>
+    <h2>Sign Up</h2>
+  </div>
+
+  <div class="modal-body">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div><%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %></div>
+
+    <div><%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true %></div>
+
+    <div><%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %></div>
+
+    <div><%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+    <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+  </div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+  <div class="modal-footer">
+    <div><%= f.submit "Sign up", class: "btn btn-default" %></div>
+    <p><a href="#" class="btn btn-small" data-dismiss="modal">Close</a></p>
+  </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
+
+
+
+
+
+
+
+
+
