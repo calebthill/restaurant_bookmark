@@ -1,0 +1,18 @@
+body {
+  padding-top: 65px;
+ }
+
+.list_items {
+  font-size: 1.3em;
+}
+
+.jumbotron {
+  margin-top: -30px;
+  background-image: url('restaurant_bookmark.png');
+  padding-top: 200px;
+  padding-bottom: 250px;
+  vertical-align: top;
+  background-size: 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+}

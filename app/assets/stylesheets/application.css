@@ -12,12 +12,9 @@
  *
  *= require bootstrap
  *= require_tree .
+ *= require my_styles
  *= require_self
  */
-
-.list_items {
-  font-size: 1.3em;
-}
 
 #map {
   position: absolute;
@@ -27,3 +24,7 @@
   height: 50%;
   margin-left: 400px;
 }
+
+
+
+
