@@ -10,6 +10,12 @@
   <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
   <%= csrf_meta_tags %>
 </head>
+<script type="text/javascript">
+$(function (){
+  $("#sign_up").modal({show: false });
+});
+</script>
+
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -33,6 +39,7 @@
           <strong><%= current_user.first_name %> |</strong>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
         <% else %>
+          <%= link_to "Sign up", "#sign_up", "data-toggle" => "modal", :class => 'btn btn-small btn-success' %>
           <%= link_to "Sign Up", new_user_registration_path, class: 'navbar-link'  %> |
           <%= link_to "Sign In", new_user_session_path, class: 'navbar-link'  %>
         <% end %>
@@ -40,7 +47,10 @@
     </div>
   </nav>
 
+ <%= render "welcome/login_modal" %>
+<%= render "welcome/sign_up_modal" %>
 <%= yield :jumbotron %>
+
 <%= notice %>
 <div class="container">
   <%= yield %>
