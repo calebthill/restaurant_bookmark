@@ -8,13 +8,18 @@ body {
 
 .jumbotron {
   margin-top: -30px;
-  background-image: url('restaurant_bookmark.png');
+  background-image: url('modern.png');
   padding-top: 200px;
   padding-bottom: 250px;
   vertical-align: top;
   background-size: 100%;
   background-position: right;
   background-repeat: no-repeat;
+}
+
+.about {
+  padding-bottom: 200px;
+  font-family: 'Roboto', sans-serif;
 }
 
 #map {
@@ -24,4 +29,17 @@ body {
   width:45%;
   height: 50%;
   margin-left: 400px;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbo-title {
+  color:#e2e6e9;
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer-content {
+  background-color: #d0c0c4;
 }
