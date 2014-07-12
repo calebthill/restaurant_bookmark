@@ -8,6 +8,6 @@ $(document).ready( function() {
 });
 
 $(function (){
-  $("#sign_up").modal({show: false });
+  $("#myModel").modal({show: false });
 });
 
