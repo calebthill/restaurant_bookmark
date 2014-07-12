@@ -38,9 +38,11 @@
     </div>
   </nav>
 
-<body class="container">
-<%= notice %>
-<%= yield %>
+<%= yield :jumbotron %>
+<div class="container">
+  <%= notice %>
+  <%= yield %>
+</div>
 
 </body>
 </html>
