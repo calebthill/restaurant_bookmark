@@ -7,14 +7,6 @@ $(document).ready( function() {
   });
 });
 
-// var map;
-// map = L.mapbox.map('map', 'calebnthill.ioeb36fl').setView([42.352, -71.066], 13);
 
-// $.ajax
-//   dataType: 'text'
-//   url: 'restaurants/index.json'
-//   success: (data) ->
-//     geojson = $.parseJSON(data)
-//     map.featureLayer.setGeoJSON(geojson)
 
 
