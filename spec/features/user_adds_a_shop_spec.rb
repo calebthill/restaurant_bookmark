@@ -19,7 +19,6 @@ feature "User creates a favorite restaurant" do
     restaurant = FactoryGirl.build(:restaurant, user: user)
     previous_count = FavoriteRestaurant.count
     log_in(user)
-    save_and_open_page
 
     within '.new_restaurant' do
       fill_in 'Name', with: restaurant.name

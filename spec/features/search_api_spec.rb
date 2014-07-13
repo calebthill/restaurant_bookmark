@@ -13,6 +13,6 @@ feature "User searches the yelp api" do
       click_on "Search"
     end
 
-      expect(page).to have_content "Quay Coffee"
+    expect(page).to have_content "Quay Coffee"
   end
 end

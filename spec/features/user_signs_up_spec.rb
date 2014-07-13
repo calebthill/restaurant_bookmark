@@ -7,30 +7,33 @@ feature "User can log in or sign up" do
     visit new_user_registration_path
 
     click_link "Sign Up"
+    within "#sign_up" do
+      fill_in "First name", with: user.first_name
+      fill_in "Last name", with: user.last_name
+      fill_in "Email", with: "calebnthill123456@gmail.com"
+      fill_in "Password", with: user.password
+      fill_in "Password confirmation", with: user.password
 
-    fill_in "First name", with: user.first_name
-    fill_in "Last name", with: user.last_name
-    fill_in "Email", with: "calebnthill123456@gmail.com"
-    fill_in "Password", with: user.password
-    fill_in "Password confirmation", with: user.password
-
-    click_button("Sign Up")
-
-    expect(page).to have_content("Welcome! You have signed up successfully.")
-    expect(page).to have_content("Sign Out")
+      click_button("Sign Up")
+      save_and_open_page
+    end
+    within ".navbar" do
+      expect(page).to have_content("Sign Out")
+    end
   end
 
   scenario "User does not enter email" do
     user = FactoryGirl.create(:user)
     visit new_user_registration_path
 
-    click_on "Sign Up"
+    within "#sign_up" do
+      click_on "Sign Up"
 
-    fill_in "First name", with: user.first_name
-    fill_in "Last name", with: user.last_name
-    fill_in "Password", with: user.password
-    fill_in "Password confirmation", with: user.password
-    within ".btn btn-default" do
+      fill_in "First name", with: user.first_name
+      fill_in "Last name", with: user.last_name
+      fill_in "Password", with: user.password
+      fill_in "Password confirmation", with: user.password
+
       click_button("Sign Up")
     end
 
@@ -42,15 +45,15 @@ feature "User can log in or sign up" do
     user = FactoryGirl.create(:user)
     visit new_user_registration_path
 
-    click_on "Sign Up"
+    within "#sign_up" do
+      click_on "Sign Up"
 
-    fill_in "First name", with: user.first_name
-    fill_in "Last name", with: user.last_name
-    fill_in "Email", with: "calebnthill123456@gmail.com"
-    fill_in "Password", with: user.password
-    fill_in "Password confirmation", with: "wrong_password"
+      fill_in "First name", with: user.first_name
+      fill_in "Last name", with: user.last_name
+      fill_in "Email", with: "calebnthill123456@gmail.com"
+      fill_in "Password", with: user.password
+      fill_in "Password confirmation", with: "wrong_password"
 
-    within ".btn btn-default" do
       click_button("Sign Up")
     end
 
