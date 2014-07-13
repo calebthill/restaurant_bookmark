@@ -6,7 +6,7 @@ feature "User can log in or sign up" do
     user = FactoryGirl.create(:user)
     visit new_user_registration_path
 
-    click_on "Sign Up"
+    click_link "Sign Up"
 
     fill_in "First name", with: user.first_name
     fill_in "Last name", with: user.last_name
@@ -14,7 +14,7 @@ feature "User can log in or sign up" do
     fill_in "Password", with: user.password
     fill_in "Password confirmation", with: user.password
 
-    click_button("Sign up")
+    click_button("Sign Up")
 
     expect(page).to have_content("Welcome! You have signed up successfully.")
     expect(page).to have_content("Sign Out")
@@ -30,8 +30,9 @@ feature "User can log in or sign up" do
     fill_in "Last name", with: user.last_name
     fill_in "Password", with: user.password
     fill_in "Password confirmation", with: user.password
-
-    click_button("Sign up")
+    within ".btn btn-default" do
+      click_button("Sign Up")
+    end
 
     expect(page).to have_content("Email can't be blank")
     expect(page).to_not have_content("Thanks for signing up!")
@@ -49,7 +50,9 @@ feature "User can log in or sign up" do
     fill_in "Password", with: user.password
     fill_in "Password confirmation", with: "wrong_password"
 
-    click_button("Sign up")
+    within ".btn btn-default" do
+      click_button("Sign Up")
+    end
 
     expect(page).to have_content("Password confirmation doesn't match")
     expect(page).to_not have_content("Thanks for signing up!")

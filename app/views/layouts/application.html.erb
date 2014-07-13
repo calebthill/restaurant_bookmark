@@ -34,7 +34,7 @@
           <strong><%= current_user.first_name %> |</strong>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
         <% else %>
-          <%= link_to "Sign up", "#sign_up", "data-toggle" => "modal", class: 'btn btn-small btn-success' %> |
+          <%= link_to "Sign Up", "#sign_up", "data-toggle" => "modal", class: 'btn btn-small btn-success' %> |
           <%= link_to "Sign In", "#login", "data-toggle" => "modal", class: 'btn btn-small btn-success' %>
         <% end %>
       </div>

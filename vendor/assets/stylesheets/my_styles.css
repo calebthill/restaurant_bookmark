@@ -26,8 +26,14 @@ body {
 }
 
 .about {
+  padding-top: 20px;
   padding-bottom: 200px;
   font-family: 'Roboto', sans-serif;
+}
+
+.search_favorite_view {
+  padding-top: 70px;
+  bottom: 30px;
 }
 
 #map {
