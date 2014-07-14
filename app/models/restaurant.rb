@@ -24,9 +24,20 @@ class Restaurant < ActiveRecord::Base
     "#{address} #{city} #{state} #{zipcode}"
   end
 
+  def summarize_favorites(user)
+    summary = {}
+    user.restaurants.each do |r|
+      summary[r.category] ||= 0
+      summary[r.category] += 1
+    end
+    summary = summary.to_a
+    summary.unshift(['Restaurants', 'Food type'])
+  end
+
   private
 
   def add_favorite
     user.restaurants << self
   end
 end
+
