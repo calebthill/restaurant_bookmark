@@ -2,13 +2,26 @@ body {
   padding-top: 65px;
  }
 
+ .well {
+  width: 30%;
+  height: 300px;
+ }
+
+.sign_up_body {
+   background: url(modern.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .list_items {
   font-size: 1.3em;
 }
 
 .jumbotron {
   margin-top: -30px;
-  background-image: url('restaurant_bookmark.png');
+  background-image: url('modern.png');
   padding-top: 200px;
   padding-bottom: 250px;
   vertical-align: top;
@@ -16,3 +29,49 @@ body {
   background-position: right;
   background-repeat: no-repeat;
 }
+
+.about {
+  padding-top: 20px;
+  padding-bottom: 200px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.about_text {
+  font-size: 55px;
+}
+
+.search_favorite_view {
+  padding-top: 35px;
+  padding-bottom: 30px;
+}
+
+#map {
+  position: absolute;
+  top:107px;
+  bottom:20px;
+  width:45%;
+  height: 50%;
+  margin-left: 400px;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbo-title {
+  color:#e2e6e9;
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer-content {
+  text-align: left;
+  background-color: #dcd2d7;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  bottom:0;
+}
+
+.yelp_search_and_results input[type=text] {
+  width: 100%
+}
+
