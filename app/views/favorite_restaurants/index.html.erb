@@ -4,6 +4,30 @@
 <% else %>
 
   <h2>Your Favorite Restaurants</h2>
+   <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Restaurants', 'Food type'],
+          ['American',     11],
+          ['Chinese',      3],
+          ['Italian',  4],
+          ['French', 2],
+          ['Thai',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+
   <ul>
     <% @favorite_restaurants.each do |restaurant| %>
       <li class= "list_items"><%= link_to restaurant.name, restaurant_path(restaurant) %>
