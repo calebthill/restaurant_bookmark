@@ -8,17 +8,10 @@
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Restaurants', 'Food type'],
-          ['American',     11],
-          ['Chinese',      3],
-          ['Italian',  4],
-          ['French', 2],
-          ['Thai',    7]
-        ]);
-
+        var favoritesArray = <%= raw @favorite_restaurants.first.summarize_favorites(current_user).inspect %>;
+        var data = google.visualization.arrayToDataTable(favoritesArray);
         var options = {
-          title: 'My Daily Activities'
+          title: 'Your favorite food types!'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));

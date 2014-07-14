@@ -1,5 +1,4 @@
 class FavoriteRestaurantsController < ApplicationController
-  #before_action :search
   def index
     @restaurant = Restaurant.new
     @favorite_restaurants = current_user.restaurants.order(rating: :desc).page params[:page]
@@ -23,7 +22,6 @@ class FavoriteRestaurantsController < ApplicationController
                                                  zipcode: params["zipcode"], phone: params["phone"],
                                                  rating: params["rating"], yelp_review: params["yelp_review"], category: params["category"], user_id: current_user.id)
       redirect_to restaurant_path(@restaurant)
-      binding.pry
     end
   end
 
