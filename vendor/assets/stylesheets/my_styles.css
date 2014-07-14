@@ -2,6 +2,11 @@ body {
   padding-top: 65px;
  }
 
+ .well {
+  width: 30%;
+  height: 300px;
+ }
+
 .sign_up_body {
    background: url(modern.png) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -31,9 +36,13 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.about_text {
+  font-size: 55px;
+}
+
 .search_favorite_view {
-  padding-top: 70px;
-  bottom: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
 }
 
 #map {
@@ -55,5 +64,14 @@ body {
 }
 
 .footer-content {
-  background-color: #d0c0c4;
+  text-align: left;
+  background-color: #dcd2d7;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  bottom:0;
 }
+
+.yelp_search_and_results input[type=text] {
+  width: 100%
+}
+
