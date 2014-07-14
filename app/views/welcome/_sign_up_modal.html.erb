@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button class="close", data-dismiss="modal">x</button>
+        <button class="close" data-dismiss="modal">x</button>
         <h2>Sign Up</h2>
       </div>
 
@@ -24,13 +24,11 @@
 
         <div><%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-      </div>
 
-      <div class="modal-footer">
         <div><%= f.submit "Sign Up", class: "btn btn-default" %></div>
         <p><a href="#" class="btn btn-small" data-dismiss="modal">Close</a></p>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
 </div>

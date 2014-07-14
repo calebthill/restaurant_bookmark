@@ -13,9 +13,7 @@ feature "User can log in or sign up" do
       fill_in "Email", with: "calebnthill123456@gmail.com"
       fill_in "Password", with: user.password
       fill_in "Password confirmation", with: user.password
-
       click_button("Sign Up")
-      save_and_open_page
     end
     within ".navbar" do
       expect(page).to have_content("Sign Out")

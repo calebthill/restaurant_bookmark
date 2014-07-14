@@ -46,6 +46,7 @@ group :test, :development do
   gem 'shoulda-matchers'
   gem 'valid_attribute'
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 
 group :test do
