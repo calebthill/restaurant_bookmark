@@ -5,6 +5,23 @@
   <% else %>
 
     <h2>Your Favorite Restaurants</h2>
+     <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var favoritesArray = <%= raw @favorite_restaurants.first.summarize_favorites(current_user).inspect %>;
+          var data = google.visualization.arrayToDataTable(favoritesArray);
+          var options = {
+            title: 'Your favorite food types!'
+          };
+
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+      </script>
+
+      <div id="piechart" style="width: 600px; height: 400px;"></div>
+
     <ul>
       <% @favorite_restaurants.each do |restaurant| %>
         <li class= "list_items"><%= link_to restaurant.name, restaurant_path(restaurant) %>
@@ -30,13 +47,12 @@
       <%= submit_tag "Search", class: "btn btn-default" %>
     <% end %>
 
-    <% if @restaurants %>
-      <% @restaurants["businesses"].each do |restaurant| %>
-        <li><%= "#{restaurant["name"]} - #{restaurant["city"]}" %>
-            <%= link_to "★", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"], phone: restaurant["phone"], zipcode: restaurant["zipcode"], rating: restaurant["avg_rating"], yelp_review: restaurant["rating_img_url"]}, method: :post %></li>
-      <% end %>
-      <h5><a href="#" class= "show_manual_restaurant">Not what your looking for?</a></h5>
+  <% if @restaurants %>
+    <% @restaurants["businesses"].each do |restaurant| %>
+      <li><%= "#{restaurant["name"]} - #{restaurant["city"]}" %>
+          <%= link_to "★", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"], phone: restaurant["phone"], zipcode: restaurant["zipcode"], rating: restaurant["avg_rating"], yelp_review: restaurant["rating_img_url"], category: restaurant["categories"][0]["name"]}, method: :post %></li>
     <% end %>
+    <h5><a href="#" class= "show_manual_restaurant">Not what your looking for?</a></h5>
   </div>
 
 
@@ -65,5 +81,3 @@
     <% end %>
   </div>
 </div>
-
-

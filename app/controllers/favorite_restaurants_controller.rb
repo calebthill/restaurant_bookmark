@@ -1,5 +1,4 @@
 class FavoriteRestaurantsController < ApplicationController
-  #before_action :search
   def index
     @restaurant = Restaurant.new
     @favorite_restaurants = current_user.restaurants.order(rating: :desc).page params[:page]
@@ -21,7 +20,8 @@ class FavoriteRestaurantsController < ApplicationController
       @restaurant = Restaurant.find_or_create_by(name: params["restaurant"], address: params["address"],
                                                  city: params["city"], state: params["state"],
                                                  zipcode: params["zipcode"], phone: params["phone"],
-                                                 rating: params["rating"], yelp_review: params["yelp_review"], user_id: current_user.id)
+                                                 rating: params["rating"], yelp_review: params["yelp_review"],
+                                                 category: params["category"], user_id: current_user.id)
       redirect_to restaurant_path(@restaurant)
     end
   end
