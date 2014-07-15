@@ -5,7 +5,6 @@ class FavoriteRestaurantsController < ApplicationController
   end
 
   def create
-    binding.pry
     if params["restaurant_id"] != nil
       @restaurant = Restaurant.find(params[:restaurant_id])
       @favorite_restaurant = FavoriteRestaurant.new(user_id: current_user.id,
@@ -22,7 +21,7 @@ class FavoriteRestaurantsController < ApplicationController
                                                  city: params["city"], state: params["state"],
                                                  zipcode: params["zipcode"], phone: params["phone"],
                                                  rating: params["rating"], yelp_review: params["yelp_review"],
-                                                 category: params["category"], user_id: current_user.id)
+                                                 category: params["category"], yelp_photo_url: params["yelp_photo_url"] ,user_id: current_user.id)
       redirect_to restaurant_path(@restaurant)
     end
   end
