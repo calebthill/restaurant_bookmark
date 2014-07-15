@@ -41,11 +41,11 @@ ActiveRecord::Schema.define(version: 20140715203548) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "rating"
     t.string   "yelp_review"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "category"
-    t.integer  "rating"
     t.string   "yelp_photo_url"
   end
 

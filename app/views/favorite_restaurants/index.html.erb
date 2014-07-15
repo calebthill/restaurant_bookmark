@@ -104,7 +104,8 @@
     <% @favorite_restaurants.each do |restaurant| %>
       <div class="col-md-3 test">
         <div class= "restaurant-box">
-          <div class= "name"><%= link_to restaurant.name, restaurant_path(restaurant) %></div><br>
+          <img src ="<%= restaurant.yelp_photo_url %>" class="yelp_photo">
+          <div class= "name"><%= link_to restaurant.name, restaurant_path(restaurant) %></div>
           <img src ="<%= restaurant.yelp_review %>" class="yelp_stars">
         </div>
       </div>

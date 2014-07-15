@@ -86,9 +86,22 @@ body {
   background: white;
   width: 150px;
   height: 150px;
+  padding-top: 10px;
 }
 
 .name {
   text-align: center;
+}
+
+.yelp_stars {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.yelp_photo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
