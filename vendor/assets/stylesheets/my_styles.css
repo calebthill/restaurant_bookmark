@@ -1,5 +1,6 @@
 body {
   padding-top: 65px;
+  background-color: #e7eaef;
  }
 
  .well {
@@ -17,6 +18,10 @@ body {
 
 .list_items {
   font-size: 1.3em;
+}
+
+.test {
+  margin-bottom: 50px;
 }
 
 .jumbotron {
@@ -73,5 +78,15 @@ body {
 
 .yelp_search_and_results input[type=text] {
   width: 100%
+}
+
+.restaurant-box {
+  background: white;
+  width: 150px;
+  height: 150px;
+}
+
+.name {
+  text-align: center;
 }
 

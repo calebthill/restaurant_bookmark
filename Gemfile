@@ -47,6 +47,7 @@ group :test, :development do
   gem 'valid_attribute'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem 'rack-mini-profiler'
 end
 
 group :test do

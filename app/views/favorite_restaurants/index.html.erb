@@ -1,108 +1,115 @@
-<div class="col-md-6">
-  <% if current_user.restaurants == [] %>
-    <h2>You don't have any Favorite Restaurants yet!</h2>
-    <p>Go Ahead... Add some!</p>
-  <% else %>
+<h2>Search through yelp</h2>
+<div class="yelp_search_and_results">
+  <%= form_tag "/search", method: :get, class: :search do %>
+    <%= label_tag :term, "Restaurant Name"  %>
+    <%= text_field_tag :term %>
 
-    <h2>Your Favorite Restaurants</h2>
+    <%= label_tag :city, "City" %>
+    <%= text_field_tag :city %>
 
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Your favorite categories
-</button>
+    <%= label_tag :state, "State" %>
+    <%= text_field_tag :state %>
+
+    <%= submit_tag "Search", class: "btn btn-default" %>
+  <% end %>
+
+  <% if @restaurants %>
+  <% @restaurants["businesses"].each do |restaurant| %>
+    <li><%= "#{restaurant["name"]} - #{restaurant["city"]}" %>
+        <%= link_to "★", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"], phone: restaurant["phone"], zipcode: restaurant["zipcode"], rating: restaurant["avg_rating"], yelp_review: restaurant["rating_img_url"], category: restaurant["categories"][0]["name"]}, method: :post %></li>
+  <% end %>
+  <h5><a href="#" class= "show_manual_restaurant">Not what your looking for?</a></h5>
+  <%end %>
+</div>
 
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title">Favorites by category</h4>
-          </div>
-          <div class="modal-body">
-            <script type="text/javascript">
-              google.load("visualization", "1", {packages:["corechart"]});
-              google.setOnLoadCallback(drawChart);
-              function drawChart() {
-                var favoritesArray = <%= raw @favorite_restaurants.first.summarize_favorites(current_user) %>;
-                var data = google.visualization.arrayToDataTable(favoritesArray);
-                var options = {
-                   is3D: true,
-                  'width':550,
-                  'height':300,
-                   pieSliceText: "none"
-                };
 
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-                chart.draw(data, options);
-              }
-            </script>
+<div class="manual_restaurant">
+  <h4>Add your favorite restaurant manually!</h4>
+  <%= form_for @restaurant do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %><br>
 
-            <div id="piechart" style="width: 900px; height: 300px;"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= f.label :address %>
+    <%= f.text_field :address, class: "form-control" %><br>
 
-    <ul>
-      <% @favorite_restaurants.each do |restaurant| %>
-        <li class= "list_items"><%= link_to restaurant.name, restaurant_path(restaurant) %>
-        <img src ="<%= restaurant.yelp_review %>" class="yelp_stars"></li>
-      <% end %>
-    </ul>
+    <%= f.label :city %>
+    <%= f.text_field :city, class: "form-control" %><br>
+
+    <%= f.label :state %>
+    <%= f.text_field :state, class: "form-control" %><br>
+
+    <%= f.label :zipcode %>
+    <%= f.text_field :zipcode, class: "form-control" %><br>
+
+    <%= f.label :phone %>
+    <%= f.text_field :phone, class: "form-control" %><br>
+
+    <%= f.submit class: "btn btn-default" %>
   <% end %>
 </div>
 
-<div class="col-md-6">
-  <h2>Search through yelp</h2>
-  <div class="yelp_search_and_results">
-    <%= form_tag "/search", method: :get, class: :search do %>
-      <%= label_tag :term, "Restaurant Name"  %>
-      <%= text_field_tag :term %>
 
-      <%= label_tag :city, "City" %>
-      <%= text_field_tag :city %>
 
-      <%= label_tag :state, "State" %>
-      <%= text_field_tag :state %>
+<% if current_user.restaurants == [] %>
+  <h2>You don't have any Favorite Restaurants yet!</h2>
+  <p>Go Ahead... Add some!</p>
+<% else %>
 
-      <%= submit_tag "Search", class: "btn btn-default" %>
-    <% end %>
+  <h2>Your Favorite Restaurants</h2>
 
-  <% if @restaurants %>
-    <% @restaurants["businesses"].each do |restaurant| %>
-      <li><%= "#{restaurant["name"]} - #{restaurant["city"]}" %>
-          <%= link_to "★", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"], phone: restaurant["phone"], zipcode: restaurant["zipcode"], rating: restaurant["avg_rating"], yelp_review: restaurant["rating_img_url"], category: restaurant["categories"][0]["name"]}, method: :post %></li>
-    <% end %>
-    <h5><a href="#" class= "show_manual_restaurant">Not what your looking for?</a></h5>
-    <%end %>
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Your favorite categories
+  </button>
+
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">Favorites by category</h4>
+        </div>
+        <div class="modal-body">
+          <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+              var favoritesArray = <%= raw @favorite_restaurants.first.summarize_favorites(current_user) %>;
+              var data = google.visualization.arrayToDataTable(favoritesArray);
+              var options = {
+                 is3D: true,
+                'width':550,
+                'height':300,
+                 pieSliceText: "none"
+              };
+
+              var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+              chart.draw(data, options);
+            }
+          </script>
+
+          <div id="piechart" style="width: 900px; height: 300px;"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
 
-  <div class="manual_restaurant">
-    <h4>Add your favorite restaurant manually!</h4>
-    <%= form_for @restaurant do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control" %><br>
-
-      <%= f.label :address %>
-      <%= f.text_field :address, class: "form-control" %><br>
-
-      <%= f.label :city %>
-      <%= f.text_field :city, class: "form-control" %><br>
-
-      <%= f.label :state %>
-      <%= f.text_field :state, class: "form-control" %><br>
-
-      <%= f.label :zipcode %>
-      <%= f.text_field :zipcode, class: "form-control" %><br>
-
-      <%= f.label :phone %>
-      <%= f.text_field :phone, class: "form-control" %><br>
-
-      <%= f.submit class: "btn btn-default" %>
+  <div class="col-md-12"><h1 class="title center">My Favorites</h1></div>
+  <div class="row">
+    <% @favorite_restaurants.each do |restaurant| %>
+      <div class="col-md-3 test">
+        <div class= "restaurant-box">
+          <div class= "name"><%= link_to restaurant.name, restaurant_path(restaurant) %></div><br>
+          <img src ="<%= restaurant.yelp_review %>" class="yelp_stars">
+        </div>
+      </div>
     <% end %>
   </div>
-</div>
+<% end %>
+
+
