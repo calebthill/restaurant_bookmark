@@ -5,6 +5,7 @@ class FavoriteRestaurantsController < ApplicationController
   end
 
   def create
+    binding.pry
     if params["restaurant_id"] != nil
       @restaurant = Restaurant.find(params[:restaurant_id])
       @favorite_restaurant = FavoriteRestaurant.new(user_id: current_user.id,
