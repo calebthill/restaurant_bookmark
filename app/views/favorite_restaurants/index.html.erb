@@ -5,22 +5,46 @@
   <% else %>
 
     <h2>Your Favorite Restaurants</h2>
-     <script type="text/javascript">
-        google.load("visualization", "1", {packages:["corechart"]});
-        google.setOnLoadCallback(drawChart);
-        function drawChart() {
-          var favoritesArray = <%= raw @favorite_restaurants.first.summarize_favorites(current_user).inspect %>;
-          var data = google.visualization.arrayToDataTable(favoritesArray);
-          var options = {
-            title: 'Your favorite food types!'
-          };
 
-          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-          chart.draw(data, options);
-        }
-      </script>
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Your favorite categories
+</button>
 
-      <div id="piechart" style="width: 600px; height: 400px;"></div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Favorites by category</h4>
+          </div>
+          <div class="modal-body">
+            <script type="text/javascript">
+              google.load("visualization", "1", {packages:["corechart"]});
+              google.setOnLoadCallback(drawChart);
+              function drawChart() {
+                var favoritesArray = <%= raw @favorite_restaurants.first.summarize_favorites(current_user) %>;
+                var data = google.visualization.arrayToDataTable(favoritesArray);
+                var options = {
+                   is3D: true,
+                  'width':550,
+                  'height':300,
+                   pieSliceText: "none"
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                chart.draw(data, options);
+              }
+            </script>
+
+            <div id="piechart" style="width: 900px; height: 300px;"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <ul>
       <% @favorite_restaurants.each do |restaurant| %>
@@ -53,6 +77,7 @@
           <%= link_to "★", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"], phone: restaurant["phone"], zipcode: restaurant["zipcode"], rating: restaurant["avg_rating"], yelp_review: restaurant["rating_img_url"], category: restaurant["categories"][0]["name"]}, method: :post %></li>
     <% end %>
     <h5><a href="#" class= "show_manual_restaurant">Not what your looking for?</a></h5>
+    <%end %>
   </div>
 
 
