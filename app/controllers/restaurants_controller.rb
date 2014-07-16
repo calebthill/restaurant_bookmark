@@ -60,7 +60,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new
     @favorite_restaurants = current_user.restaurants
     @restaurants = client.search(yelp_request)
-    @current_tab = @restaurants['businesses'].any? ? 'searchyelp' : 'favorites'
+    @current_tab = @restaurants['businesses'].any? ? 'search' : 'favorites'
     #render :'favorite_restaurants/index'
   end
 

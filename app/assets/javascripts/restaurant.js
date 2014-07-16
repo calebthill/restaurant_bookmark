@@ -10,3 +10,8 @@ $(document).ready( function() {
 $(function (){
   $("#myModel").modal({show: false });
 });
+
+
+$("#search").click(function(){
+  $("#search").addClass("active");
+});

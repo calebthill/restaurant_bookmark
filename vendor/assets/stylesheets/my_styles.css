@@ -1,6 +1,18 @@
 body {
   padding-top: 65px;
-  background-color: white;
+  background-color: #eeeeee;
+ }
+
+ /* Navbar*/
+ .navbar {
+  background-color: #14b8b1 ; /* background color will be black for all browsers */
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+}
+
+ nav {
+  color: #ce616e ;
  }
 
  .well {
@@ -83,10 +95,11 @@ body {
 /* restaurant box styles */
 
 .restaurant-box {
-  background: white;
+  /*background: white;
   width: 150px;
   height: 170px;
-  padding-top: 10px;
+*/  padding-top: 10px;
+  padding-bottom: 10px;
 
   -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0px 1px 6px rgba(23, 69, 88, .5);
@@ -95,12 +108,13 @@ body {
   border-radius: 7px;
 
   background: -webkit-gradient(linear, left top, left bottom,
-  color-stop(0%, white), color-stop(15%, white), color-stop(100%, #D7E9F5));
-  background: -moz-linear-gradient(top, white 0%, white 55%, #D5E4F3 130%);
+  color-stop(0%, white), color-stop(15%, white), color-stop(100%, #eeeeee ));
+  background: -moz-linear-gradient(top, white 0%, white 55%, #eeeeee 130%);
 }
 
 .name {
   text-align: center;
+  text-decoration: none;
 }
 
 .yelp_stars {
@@ -119,3 +133,6 @@ body {
   padding-top: 17px
 }
 
+.nav-tabs > li.active > a {
+  background-color: #eeeeee ;
+}
