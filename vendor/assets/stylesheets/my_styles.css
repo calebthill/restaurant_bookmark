@@ -1,6 +1,6 @@
 body {
   padding-top: 65px;
-  background-color: #e7eaef;
+  background-color: white;
  }
 
  .well {
@@ -85,7 +85,7 @@ body {
 .restaurant-box {
   background: white;
   width: 150px;
-  height: 150px;
+  height: 170px;
   padding-top: 10px;
 
   -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
@@ -113,5 +113,9 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.row {
+  padding-top: 17px
 }
 

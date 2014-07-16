@@ -10,4 +10,3 @@ $(document).ready( function() {
 $(function (){
   $("#myModel").modal({show: false });
 });
-
