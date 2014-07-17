@@ -14,18 +14,17 @@
   <p>Go Ahead... Add some!</p>
 <% else %>
 
-<div class="row">
-  <% @favorite_restaurants.each do |restaurant| %>
-    <div class="col-md-3 col-sm-6 col-xs-6 test">
-      <div class= "restaurant-box"><%= link_to restaurant_path(restaurant) do %>
-        <img src ="<%= restaurant.yelp_photo_url %>" class="yelp_photo img-responsive">
-        <div class= "name"><%= restaurant.name %></div>
-        <img src ="<%= restaurant.yelp_review %>" class="yelp_stars">
+  <div class="row">
+    <% @favorite_restaurants.each do |restaurant| %>
+      <div class="col-md-3 col-sm-6 col-xs-6 test">
+        <div class= "restaurant-box"><%= link_to restaurant_path(restaurant) do %>
+          <img src ="<%= restaurant.yelp_photo_url %>" class="yelp_photo img-responsive">
+          <div class= "name"><%= restaurant.name %></div>
+          <img src ="<%= restaurant.yelp_review %>" class="yelp_stars">
+        </div>
+        <% end %>
       </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-
+    <% end %>
+  </div>
 <% end %>
 

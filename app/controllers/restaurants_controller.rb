@@ -5,32 +5,6 @@ class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.order(:name).page params[:page]
     @restaurant = Restaurant.new
-
-    #loop through each restaurant, create an object, then puts it in the @geojson array
-    @geojson = Array.new
-    @restaurants.each do |restaurant|
-      @geojson << {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [restaurant.latitude, restaurant.longitude]
-        },
-        properties: {
-          name: restaurant.name,
-          phone: restaurant.phone,
-          address: restaurant.address,
-          city: restaurant.city,
-          state: restaurant.state,
-          :'marker-color' => '#00607d',
-          :'marker-symbol' => 'circle',
-          :'marker-size' => 'medium'
-        }
-      }
-    end
-    respond_to do |format|
-      format.html
-      format.json { render json: @geojson }
-    end
   end
 
   def create
