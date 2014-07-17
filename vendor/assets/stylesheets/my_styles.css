@@ -11,6 +11,15 @@ body {
   filter: none;
 }
 
+.btn-success {
+  background-color:#b8a9a9;
+  border: white;
+}
+
+.btn-success:hover {
+  background-color: #d5dce2;
+}
+
  .well {
   width: 30%;
   height: 300px;
