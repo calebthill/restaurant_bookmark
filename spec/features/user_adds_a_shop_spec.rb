@@ -19,6 +19,7 @@ feature "User creates a favorite restaurant" do
     restaurant = FactoryGirl.build(:restaurant, user: user)
     previous_count = FavoriteRestaurant.count
     log_in(user)
+    click_link "Search"
 
     within '.new_restaurant' do
       fill_in 'Name', with: restaurant.name
@@ -47,6 +48,7 @@ feature "User creates a favorite restaurant" do
     restaurant = FactoryGirl.create(:restaurant, user: user)
     log_in(user)
 
+    click_link "Search"
     within '.new_restaurant' do
       fill_in 'Name', with: restaurant.name
       fill_in 'Address', with: restaurant.address
