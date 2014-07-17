@@ -1,10 +1,11 @@
 <ul class="nav nav-tabs" role="tablist" id="myTab">
-  <li id="favorites">
+  <li>
     <%= link_to 'Favorites', favorite_restaurants_path, role: 'tab' %>
-  </li>
-  <!-- <li><a href="#favorites" role="tab" data-toggle="tab">Favorites</a></li> -->
-  <li class="active" id="search">
+  <li class="active">
     <%= link_to 'Search', search_path, role: 'tab' %>
+  </li>
+  <li>
+    <%= link_to 'Chart', chart_path, role: 'tab' %>
   </li>
 </ul>
 <div class="tab-content">

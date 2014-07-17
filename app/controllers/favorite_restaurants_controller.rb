@@ -32,6 +32,10 @@ class FavoriteRestaurantsController < ApplicationController
     flash[:notice]= "Removed from favorites"
     redirect_to favorite_restaurants_path
   end
+
+  def chart
+    @favorite_restaurants = current_user.restaurants.order(rating: :desc).page params[:page]
+  end
 end
 
 
