@@ -5,14 +5,14 @@ feature "User searches the yelp api" do
     user = FactoryGirl.create(:user)
     log_in(user)
     click_link "Search"
-    save_and_open_page
 
+    within ".search" do
       fill_in "Restaurant Name", with: 'Quay'
       fill_in "City", with: 'Kansas City'
       fill_in "State", with: 'MO'
 
       click_on "Search"
-
+    end
 
     expect(page).to have_content "Quay Coffee"
   end
