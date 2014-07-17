@@ -5,28 +5,16 @@ body {
 
  /* Navbar*/
  .navbar {
-  background-color: #14b8b1 ; /* background color will be black for all browsers */
+  background-color: #32425c; /* background color will be black for all browsers */
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
 }
 
- nav {
-  color: #ce616e ;
- }
-
  .well {
   width: 30%;
   height: 300px;
  }
-
-.sign_up_body {
-   background: url(modern.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 
 .list_items {
   font-size: 1.3em;
@@ -37,7 +25,7 @@ body {
 }
 
 .jumbotron {
-  margin-top: -30px;
+  margin-top: -40px;
   background-image: url('modern.png');
   padding-top: 200px;
   padding-bottom: 250px;
