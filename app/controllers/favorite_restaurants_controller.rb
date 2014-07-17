@@ -21,7 +21,7 @@ class FavoriteRestaurantsController < ApplicationController
                                                  city: params["city"], state: params["state"],
                                                  zipcode: params["zipcode"], phone: params["phone"],
                                                  rating: params["rating"], yelp_review: params["yelp_review"],
-                                                 category: params["category"], user_id: current_user.id)
+                                                 category: params["category"], yelp_photo_url: params["yelp_photo_url"] ,user_id: current_user.id)
       redirect_to restaurant_path(@restaurant)
     end
   end
@@ -31,6 +31,10 @@ class FavoriteRestaurantsController < ApplicationController
     @favorite_restaurant.first.destroy
     flash[:notice]= "Removed from favorites"
     redirect_to favorite_restaurants_path
+  end
+
+  def chart
+    @favorite_restaurants = current_user.restaurants.order(rating: :desc).page params[:page]
   end
 end
 

@@ -543,4 +543,51 @@ http_interactions:
         "photo_url_small": "http://media2.fl.yelpcdn.com/bpthumb/22xDrecNjCKmRGAaPa14wA/ss"}]}'
     http_version: 
   recorded_at: Thu, 10 Jul 2014 14:59:49 GMT
+- request:
+    method: get
+    uri: http://api.yelp.com/business_review_search?location=&ywsid=<Yelp API key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - yelp for Ruby (http://www.rubyforge.org/projects/yelp/)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 16 Jul 2014 17:31:18 GMT
+      Server:
+      - Apache
+      X-Node:
+      - web41, api_com
+      Cache-Control:
+      - private
+      Set-Cookie:
+      - bse=2dd55b00c695191d1f4ed4590b942446; Domain=.yelp.com; Path=/; HttpOnly
+      - yuv=VhZK3mFM4FCKf8F_YF-RY0a3kdGlOVVDde2aHKyB01LnORCkF1Afw0kpAAmNfg_Nzeo98j3BY51uiGFg7i8H_giLkWCjLujp;
+        Domain=.yelp.com; Max-Age=630720000; Path=/; expires=Tue, 11-Jul-2034 17:31:18
+        GMT
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/plain; charset=utf-8
+      X-Mode:
+      - rw
+      X-Proxied:
+      - lb1
+    body:
+      encoding: UTF-8
+      string: '{"message": {"text": "Bad location", "code": 202, "version": "1.1.1"},
+        "businesses": []}'
+    http_version: 
+  recorded_at: Wed, 16 Jul 2014 17:31:18 GMT
 recorded_with: VCR 2.9.2

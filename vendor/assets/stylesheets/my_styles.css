@@ -1,26 +1,40 @@
 body {
   padding-top: 65px;
+  background-color: #eeeeee;
  }
+
+ /* Navbar*/
+ .navbar {
+  background-color: white /*#32425c*/; /* background color will be black for all browsers */
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+}
+
+.btn-success {
+  background-color: #92dce0;
+  border: white;
+}
+
+.btn-success:hover {
+  background-color: #d5dce2;
+}
 
  .well {
   width: 30%;
   height: 300px;
  }
 
-.sign_up_body {
-   background: url(modern.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 .list_items {
   font-size: 1.3em;
 }
 
+.test {
+  margin-bottom: 50px;
+}
+
 .jumbotron {
-  margin-top: -30px;
+  margin-top: -40px;
   background-image: url('modern.png');
   padding-top: 200px;
   padding-bottom: 250px;
@@ -73,5 +87,103 @@ body {
 
 .yelp_search_and_results input[type=text] {
   width: 100%
+}
+
+/* restaurant box styles */
+
+.restaurant-box {
+  /*background: white;
+  width: 150px;
+  height: 170px;
+*/  padding-top: 10px;
+  padding-bottom: 10px;
+
+  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 1px 6px rgba(23, 69, 88, .5);
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+
+  background: -webkit-gradient(linear, left top, left bottom,
+  color-stop(0%, white), color-stop(15%, white), color-stop(100%, #eeeeee ));
+  background: -moz-linear-gradient(top, white 0%, white 55%, #eeeeee 130%);
+}
+
+.name {
+  text-align: center;
+  text-decoration: none;
+}
+
+.yelp_stars {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.yelp_photo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  padding-top: 17px
+}
+
+.nav-tabs > li.active > a {
+  background-color: #eeeeee;
+}
+
+.search {
+  margin-top: 15px;
+}
+
+/* Links for all restaurants and favorite restaurants */
+.navbar-default .navbar-nav > li > a {
+  color: #5adae2;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #f1a9a1;
+}
+
+/*#############################################*/
+
+/* FavorEats brand (left top corner)*/
+.navbar-default .navbar-brand {
+  color: #db0a5b ;
+  font-weight: bold;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #db0a5b ;
+}
+
+/*################################*/
+
+/* Sign out link */
+.navbar-default .navbar-link {
+  color: #5adae2;
+}
+
+.navbar-default .navbar-link:hover {
+  color: #5adae2;
+}
+
+/*#########################*/
+.navbar-default .navbar-text {
+  color: #5adae2;
+}
+
+a {
+  color: #5adae2;
+}
+
+a:hover {
+  color: #f1a9a1;
+}
+
+h2 {
+  color: #db0a5b;
 }
 
