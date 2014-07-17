@@ -16,9 +16,9 @@
     <% @favorite_restaurants.each do |restaurant| %>
       <div class="col-md-3 col-sm-6 col-xs-6 test">
         <div class= "restaurant-box"><%= link_to restaurant_path(restaurant) do %>
-          <img src ="<%= restaurant.yelp_photo_url %>" class="yelp_photo img-responsive">
+          <%= image_tag(restaurant.yelp_photo_url, class: "yelp_photo img-responsive")%>
           <div class= "name"><%= restaurant.name %></div>
-          <img src ="<%= restaurant.yelp_review %>" class="yelp_stars">
+          <%= image_tag(restaurant.yelp_review, class: "yelp_stars") %>
         </div>
         <% end %>
       </div>
