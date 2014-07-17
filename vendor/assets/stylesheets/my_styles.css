@@ -144,9 +144,12 @@ body {
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-  color: #db0a5b;
+  color: #f1a9a1;
 }
 
+/*#############################################*/
+
+/* FavorEats brand (left top corner)*/
 .navbar-default .navbar-brand {
   color: #db0a5b ;
   font-weight: bold;
@@ -156,10 +159,34 @@ body {
   color: #db0a5b ;
 }
 
+/*################################*/
+
+/* Sign out link */
 .navbar-default .navbar-link {
-  color: #eeeeee;
+  color: #5adae2;
 }
 
+.navbar-default .navbar-link:hover {
+  color: #5adae2;
+}
+
+/*#########################*/
 .navbar-default .navbar-text {
   color: #5adae2;
+}
+
+a {
+  color: #5adae2;
+}
+
+a:hover {
+  color: #f1a9a1;
+}
+
+h2 {
+  color: #db0a5b;
+}
+
+p {
+  color: #db0a5b;
 }
