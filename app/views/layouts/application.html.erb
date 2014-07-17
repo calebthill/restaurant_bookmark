@@ -21,10 +21,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<%= root_path %>"><span class="brand-title brown">Restaurant Bookmark</span></a>
+        <a class="navbar-brand" href="<%= root_path %>"><span class="brand-title brown">FavorEats</span></a>
       </div>
       <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav" id="nav-links">
             <% if user_signed_in? %>
               <li><%= link_to "All Restaurants", restaurants_path %></li>
               <li><%= link_to "Favorite Restaurants", favorite_restaurants_path %></li>

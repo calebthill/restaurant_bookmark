@@ -5,14 +5,14 @@ body {
 
  /* Navbar*/
  .navbar {
-  background-color: #32425c; /* background color will be black for all browsers */
+  background-color: white /*#32425c*/; /* background color will be black for all browsers */
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
 }
 
 .btn-success {
-  background-color:#b8a9a9;
+  background-color: #92dce0;
   border: white;
 }
 
@@ -132,4 +132,34 @@ body {
 
 .nav-tabs > li.active > a {
   background-color: #eeeeee;
+}
+
+.search {
+  margin-top: 15px;
+}
+
+/* Links for all restaurants and favorite restaurants */
+.navbar-default .navbar-nav > li > a {
+  color: #5adae2;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #db0a5b;
+}
+
+.navbar-default .navbar-brand {
+  color: #db0a5b ;
+  font-weight: bold;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #db0a5b ;
+}
+
+.navbar-default .navbar-link {
+  color: #eeeeee;
+}
+
+.navbar-default .navbar-text {
+  color: #5adae2;
 }
