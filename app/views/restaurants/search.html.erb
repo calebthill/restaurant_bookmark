@@ -27,14 +27,20 @@
         <% end %>
       </div>
 
-      <div class= "col-md-6">
+      <div class= "col-md-6 search_results">
         <% if @restaurants %>
-        <% @restaurants["businesses"].each do |restaurant| %>
-          <li><%= "#{restaurant["name"]} - #{restaurant["city"]}" %>
-              <%= link_to "★", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"], phone: restaurant["phone"], zipcode: restaurant["zipcode"], rating: restaurant["avg_rating"], yelp_review: restaurant["rating_img_url"], category: restaurant["categories"][0]["name"], yelp_photo_url: restaurant["photo_url"]}, method: :post %></li>
+          <ul>
+            <% @restaurants["businesses"].each_with_index do |restaurant, n| %>
+              <li>
+                <%= "#{restaurant["name"]} - #{restaurant["city"]}" %>
+                <%= link_to "★", { controller: :favorite_restaurants, restaurant: restaurant["name"], address: restaurant["address1"], city: restaurant["city"], state: restaurant["state"], phone: restaurant["phone"], zipcode: restaurant["zipcode"], rating: restaurant["avg_rating"], yelp_review: restaurant["rating_img_url"], category: restaurant["categories"][0]["name"], yelp_photo_url: restaurant["photo_url"]}, method: :post, class: "result", id: "result_#{n + 1}" %>
+              </li>
+            <% end %>
+          </ul>
+          <h5>
+            <a href="#" class= "show_manual_restaurant">Not what your looking for?</a>
+          </h5>
         <% end %>
-        <h5><a href="#" class= "show_manual_restaurant">Not what your looking for?</a></h5>
-        <%end %>
       </div>
     </div>
 

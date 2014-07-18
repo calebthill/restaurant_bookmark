@@ -12,7 +12,6 @@ class RestaurantsController < ApplicationController
     @restaurant.user = current_user
     if @restaurant.save
       flash[:notice] = "You just created a restaurant!"
-      binding.pry
       redirect_to restaurant_path(@restaurant)
     else
       flash[:notice] = "That didnt go through!"

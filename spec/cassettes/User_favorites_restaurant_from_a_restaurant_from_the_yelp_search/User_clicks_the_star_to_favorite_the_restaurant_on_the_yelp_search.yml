@@ -1,0 +1,716 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.yelp.com/business_review_search?location=&ywsid=<Yelp API key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - yelp for Ruby (http://www.rubyforge.org/projects/yelp/)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 18 Jul 2014 14:50:18 GMT
+      Server:
+      - Apache
+      X-Node:
+      - web73-r7-sfo1, api_com
+      Cache-Control:
+      - private
+      Set-Cookie:
+      - bse=f1f329c91a3601b2c620e97f16106f85; Domain=.yelp.com; Path=/; HttpOnly
+      - yuv=-6FQnI-jwFhy2izBFhqbSHqQRlz3GRH-kQ6kmvi97Mlk7CWbuOl99eJwv1vVZItePv-IIIPRNQqratSRnwfAilLiHsD2Mx_V;
+        Domain=.yelp.com; Max-Age=630720000; Path=/; expires=Thu, 13-Jul-2034 14:50:18
+        GMT
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/plain; charset=utf-8
+      X-Mode:
+      - rw
+      X-Proxied:
+      - lb1
+    body:
+      encoding: UTF-8
+      string: '{"message": {"text": "Bad location", "code": 202, "version": "1.1.1"},
+        "businesses": []}'
+    http_version: 
+  recorded_at: Fri, 18 Jul 2014 14:50:18 GMT
+- request:
+    method: get
+    uri: http://api.yelp.com/business_review_search?location=Kansas%20City,MO&term=Quay%20Coffee&ywsid=<Yelp
+      API key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - yelp for Ruby (http://www.rubyforge.org/projects/yelp/)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 18 Jul 2014 14:50:18 GMT
+      Server:
+      - Apache
+      X-Node:
+      - web71-r7-sfo1, api_com
+      Cache-Control:
+      - private
+      Set-Cookie:
+      - bse=ffcc1a399515d68c8d9ee2ad4f26da24; Domain=.yelp.com; Path=/; HttpOnly
+      - yuv=YoSYtvjuvBzCk4pdwn-y0IYgpROBFkSIkJRRLzrscOo5KXeZsWlAzgeQTPXnMLeLLjvjnikdT4Qnclm8BHzxovN9Wwt0_Fbk;
+        Domain=.yelp.com; Max-Age=630720000; Path=/; expires=Thu, 13-Jul-2034 14:50:18
+        GMT
+      Content-Length:
+      - '49637'
+      Vary:
+      - User-Agent
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Mode:
+      - rw
+      X-Proxied:
+      - lb1
+    body:
+      encoding: UTF-8
+      string: '{"message": {"text": "OK", "code": 0, "version": "1.1.1"}, "businesses":
+        [{"rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "country_code": "US", "id": "xMHamE0X48EeHRpjeVYoMg", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/quay-coffee-kansas-city",
+        "review_count": 92, "zip": "64105", "state": "MO", "rating_img_url_small":
+        "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "address1": "412 Delaware", "address2": "", "address3": "", "phone": "8164717277",
+        "state_code": "MO", "categories": [{"category_filter": "coffee", "search_url":
+        "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=412+Delaware%2C+Kansas+City+64105",
+        "name": "Coffee \u0026 Tea"}], "photo_url": "http://media3.fl.yelpcdn.com/bpthumb/i4aGTjUWSKjafzSbbwGRIg/ms",
+        "distance": 0.67655718326568604, "name": "Quay Coffee", "neighborhoods": [{"url":
+        "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Rivermarket%2C+Kansas+City%2C+MO",
+        "name": "Rivermarket"}, {"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Greater+Downtown%2C+Kansas+City%2C+MO",
+        "name": "Greater Downtown"}], "url": "http://www.yelp.com/biz/quay-coffee-kansas-city",
+        "country": "USA", "avg_rating": 5.0, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=412+Delaware%2C+Kansas+City+64105",
+        "reviews": [{"rating_img_url_small": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a6210baec261/ico/stars/v1/stars_small_2.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/9swsYwLxSrrdkQFIJnrnfQ/ss",
+        "rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b561c24f8341/ico/stars/v1/stars_2.png",
+        "rating": 2, "user_url": "http://www.yelp.com/user_details?userid=hS9aVUWhnoI4x_GWXgmdCQ",
+        "url": "http://www.yelp.com/biz/quay-coffee-kansas-city?hrid=iToyNvb4E7IX2jmP2Ty71A",
+        "mobile_uri": "/biz/quay-coffee-kansas-city?full=True\u0026hrid=iToyNvb4E7IX2jmP2Ty71A",
+        "text_excerpt": "I''ve been to a few hundred coffee shops in my life and the
+        caption that goes with a 2 star review fits this place perfectly. Literally,
+        \"Meh. I''ve...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/9swsYwLxSrrdkQFIJnrnfQ/ms",
+        "date": "2014-06-27", "user_name": "Tim Y.", "id": "iToyNvb4E7IX2jmP2Ty71A"}],
+        "photo_url_small": "http://media3.fl.yelpcdn.com/bpthumb/i4aGTjUWSKjafzSbbwGRIg/ss"},
+        {"rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png",
+        "country_code": "US", "id": "wHk4exyVvBDlP8p5s11t-w", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/oddly-correct-kansas-city",
+        "review_count": 40, "zip": "64111", "state": "MO", "rating_img_url_small":
+        "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png",
+        "address1": "3940 Main", "address2": "", "address3": "", "phone": "", "state_code":
+        "MO", "categories": [{"category_filter": "coffee", "search_url": "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=3940+Main%2C+Kansas+City+64111",
+        "name": "Coffee \u0026 Tea"}], "photo_url": "http://media1.fl.yelpcdn.com/bpthumb/OdWZs5ievhMy9qxZPtf4dA/ms",
+        "distance": 3.0860977172851562, "name": "Oddly Correct", "neighborhoods":
+        [], "url": "http://www.yelp.com/biz/oddly-correct-kansas-city", "country":
+        "USA", "avg_rating": 4.5, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=3940+Main%2C+Kansas+City+64111",
+        "reviews": [{"rating_img_url_small": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a6210baec261/ico/stars/v1/stars_small_2.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/9WOiv4A1s349oL7CsAP8lQ/ss",
+        "rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b561c24f8341/ico/stars/v1/stars_2.png",
+        "rating": 2, "user_url": "http://www.yelp.com/user_details?userid=VU9KIE4kO3VKYE_w4cSwfQ",
+        "url": "http://www.yelp.com/biz/oddly-correct-kansas-city?hrid=q91YGeSqIo33UlYwKfawhA",
+        "mobile_uri": "/biz/oddly-correct-kansas-city?full=True\u0026hrid=q91YGeSqIo33UlYwKfawhA",
+        "text_excerpt": "I''ve been working as a barista in third wave coffee for
+        two years in San Francisco. I''ve served sightglass, contraband and before
+        moving from Missouri,...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/9WOiv4A1s349oL7CsAP8lQ/ms",
+        "date": "2014-07-09", "user_name": "Ali D.", "id": "q91YGeSqIo33UlYwKfawhA"}],
+        "photo_url_small": "http://media1.fl.yelpcdn.com/bpthumb/OdWZs5ievhMy9qxZPtf4dA/ss"},
+        {"rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "country_code": "US", "id": "ExhUJJhrDqDarv7ao_yEsg", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/the-roasterie-kansas-city-2",
+        "review_count": 101, "zip": "64113", "state": "MO", "rating_img_url_small":
+        "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "address1": "6223 Brookside Blvd", "address2": "", "address3": "", "phone":
+        "8163339700", "state_code": "MO", "categories": [{"category_filter": "coffee",
+        "search_url": "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=6223+Brookside+Blvd%2C+Kansas+City+64113",
+        "name": "Coffee \u0026 Tea"}], "photo_url": "http://media3.fl.yelpcdn.com/bpthumb/9JBVpjhjAIk1zyOO7JSwSw/ms",
+        "distance": 5.9085073471069336, "name": "The Roasterie", "neighborhoods":
+        [{"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Brookside%2C+Kansas+City%2C+MO",
+        "name": "Brookside"}], "url": "http://www.yelp.com/biz/the-roasterie-kansas-city-2",
+        "country": "USA", "avg_rating": 4.0, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=6223+Brookside+Blvd%2C+Kansas+City+64113",
+        "reviews": [{"rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/kWOaFpZZgiaeVwPGJ1eqNw/ss",
+        "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "rating": 4, "user_url": "http://www.yelp.com/user_details?userid=dTfW3tpzkEl-OHPud1EV5w",
+        "url": "http://www.yelp.com/biz/the-roasterie-kansas-city-2?hrid=m8yyDGawnWNURTukwaYpWw",
+        "mobile_uri": "/biz/the-roasterie-kansas-city-2?full=True\u0026hrid=m8yyDGawnWNURTukwaYpWw",
+        "text_excerpt": "I''m not a huge coffee person (so why am I writing this review,
+        you ask? Because there are some people like me! They exist! Just not in grad
+        school.) I got...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/kWOaFpZZgiaeVwPGJ1eqNw/ms",
+        "date": "2014-04-15", "user_name": "Alex B.", "id": "m8yyDGawnWNURTukwaYpWw"}],
+        "photo_url_small": "http://media3.fl.yelpcdn.com/bpthumb/9JBVpjhjAIk1zyOO7JSwSw/ss"},
+        {"rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png",
+        "country_code": "US", "id": "E2_ck5_BP5KdBuXUhksyug", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/t-loft-kansas-city",
+        "review_count": 25, "zip": "64114", "state": "MO", "rating_img_url_small":
+        "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png",
+        "address1": "8025 State Line Rd", "address2": "", "address3": "", "phone":
+        "8162671991", "state_code": "MO", "categories": [{"category_filter": "coffee",
+        "search_url": "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=8025+State+Line+Rd%2C+Kansas+City+64114",
+        "name": "Coffee \u0026 Tea"}, {"category_filter": "juicebars", "search_url":
+        "http://www.yelp.com/search?cflt=juicebars\u0026find_desc=\u0026find_loc=8025+State+Line+Rd%2C+Kansas+City+64114",
+        "name": "Juice Bars \u0026 Smoothies"}], "photo_url": "http://media3.fl.yelpcdn.com/bpthumb/9xjoWs66N2Ph9PlptPlUdQ/ms",
+        "distance": 8.1876983642578125, "name": "T Loft", "neighborhoods": [], "url":
+        "http://www.yelp.com/biz/t-loft-kansas-city", "country": "USA", "avg_rating":
+        4.5, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=8025+State+Line+Rd%2C+Kansas+City+64114",
+        "reviews": [{"rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/fPHgxTcjvSGjfHjCTOEx8A/ss",
+        "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "rating": 4, "user_url": "http://www.yelp.com/user_details?userid=L4OggujUvsKy4BCSOMmIaA",
+        "url": "http://www.yelp.com/biz/t-loft-kansas-city?hrid=jIw7DzPk4Y2WfankOlquuA",
+        "mobile_uri": "/biz/t-loft-kansas-city?full=True\u0026hrid=jIw7DzPk4Y2WfankOlquuA",
+        "text_excerpt": "Pretty decor, fresh fruits and vegetables, nice staff.\n\nI
+        ordered a small, hot, ginger green matcha tea, sweetened with honey. It was
+        piping hot and...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/fPHgxTcjvSGjfHjCTOEx8A/ms",
+        "date": "2014-05-15", "user_name": "Maggie C.", "id": "jIw7DzPk4Y2WfankOlquuA"}],
+        "photo_url_small": "http://media3.fl.yelpcdn.com/bpthumb/9xjoWs66N2Ph9PlptPlUdQ/ss"},
+        {"rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "country_code": "US", "id": "gyYc_HQV5nyVImx_spwIzA", "is_closed": false,
+        "city": "Prairie Village", "mobile_url": "http://m.yelp.com/biz/latteland-prairie-village",
+        "review_count": 30, "zip": "66208", "state": "KS", "rating_img_url_small":
+        "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "address1": "7900 State Line Rd", "address2": "", "address3": "", "phone":
+        "9136422281", "state_code": "KS", "categories": [{"category_filter": "coffee",
+        "search_url": "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=7900+State+Line+Rd%2C+Prairie+Village+66208",
+        "name": "Coffee \u0026 Tea"}], "photo_url": "http://media3.fl.yelpcdn.com/bpthumb/geI5TTOOKi3DlSxBzPACrg/ms",
+        "distance": 8.072169303894043, "name": "Latteland", "neighborhoods": [], "url":
+        "http://www.yelp.com/biz/latteland-prairie-village", "country": "USA", "avg_rating":
+        4.0, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=7900+State+Line+Rd%2C+Prairie+Village+66208",
+        "reviews": [{"rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/74cb12ae7253/ico/stars/v1/stars_small_1.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/JY9HhsWSe0FtbwVkZvaMEA/ss",
+        "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f64056afac01/ico/stars/v1/stars_1.png",
+        "rating": 1, "user_url": "http://www.yelp.com/user_details?userid=r3BhyKoY2DGMm3Q0nHaPzQ",
+        "url": "http://www.yelp.com/biz/latteland-prairie-village?hrid=qp8TfqcNLpCf0asjoGdtsg",
+        "mobile_uri": "/biz/latteland-prairie-village?full=True\u0026hrid=qp8TfqcNLpCf0asjoGdtsg",
+        "text_excerpt": "For good coffee in KC I would not choose this place.  I have
+        been several times to all locations and NEVER is it consistent.  The people
+        on the plaza are...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/JY9HhsWSe0FtbwVkZvaMEA/ms",
+        "date": "2014-05-30", "user_name": "Jennifer S.", "id": "qp8TfqcNLpCf0asjoGdtsg"}],
+        "photo_url_small": "http://media3.fl.yelpcdn.com/bpthumb/geI5TTOOKi3DlSxBzPACrg/ss"},
+        {"rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/5ef3eb3cb162/ico/stars/v1/stars_3_half.png",
+        "country_code": "US", "id": "MqhV1wU1JzLcJSdeVLwt2g", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/city-market-coffee-house-kansas-city-2",
+        "review_count": 41, "zip": "64105", "state": "MO", "rating_img_url_small":
+        "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png",
+        "address1": "305 Main St", "address2": "", "address3": "", "phone": "8167183005",
+        "state_code": "MO", "categories": [{"category_filter": "coffee", "search_url":
+        "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=305+Main+St%2C+Kansas+City+64105",
+        "name": "Coffee \u0026 Tea"}], "photo_url": "http://media1.fl.yelpcdn.com/bpthumb/CwiuQ8ZViLKHA52nBfo_KQ/ms",
+        "distance": 0.76060962677001953, "name": "City Market Coffee House", "neighborhoods":
+        [{"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Rivermarket%2C+Kansas+City%2C+MO",
+        "name": "Rivermarket"}, {"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Greater+Downtown%2C+Kansas+City%2C+MO",
+        "name": "Greater Downtown"}], "url": "http://www.yelp.com/biz/city-market-coffee-house-kansas-city-2",
+        "country": "USA", "avg_rating": 3.5, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=305+Main+St%2C+Kansas+City+64105",
+        "reviews": [{"rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/9_rtSWzSfrKBwpDaCVWUrw/ss",
+        "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "rating": 5, "user_url": "http://www.yelp.com/user_details?userid=mwQCoS_tJUK7JC6cVw_mdg",
+        "url": "http://www.yelp.com/biz/city-market-coffee-house-kansas-city-2?hrid=_UXFvjqUFayGlM730bA-7A",
+        "mobile_uri": "/biz/city-market-coffee-house-kansas-city-2?full=True\u0026hrid=_UXFvjqUFayGlM730bA-7A",
+        "text_excerpt": "They get 5 stars for many reasons. The 1st being they have
+        soy, almond, \u0026 coconut milk options for no up charge. LOVE this!!!! \n\nMy
+        favorite drink here is...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/9_rtSWzSfrKBwpDaCVWUrw/ms",
+        "date": "2014-07-05", "user_name": "Kim N.", "id": "_UXFvjqUFayGlM730bA-7A"}],
+        "photo_url_small": "http://media1.fl.yelpcdn.com/bpthumb/CwiuQ8ZViLKHA52nBfo_KQ/ss"},
+        {"rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "country_code": "US", "id": "VFjx0oZH6rZQa-zrBQyejw", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/chez-elle-creperie-and-coffeehouse-kansas-city",
+        "review_count": 190, "zip": "64108", "state": "MO", "rating_img_url_small":
+        "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "address1": "1713 Summit St", "address2": "", "address3": "", "phone": "8164712616",
+        "state_code": "MO", "categories": [{"category_filter": "creperies", "search_url":
+        "http://www.yelp.com/search?cflt=creperies\u0026find_desc=\u0026find_loc=1713+Summit+St%2C+Kansas+City+64108",
+        "name": "Creperies"}, {"category_filter": "coffee", "search_url": "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=1713+Summit+St%2C+Kansas+City+64108",
+        "name": "Coffee \u0026 Tea"}, {"category_filter": "desserts", "search_url":
+        "http://www.yelp.com/search?cflt=desserts\u0026find_desc=\u0026find_loc=1713+Summit+St%2C+Kansas+City+64108",
+        "name": "Desserts"}], "photo_url": "http://media4.fl.yelpcdn.com/bpthumb/52Vbz-OknSoFiHxv4ceRBw/ms",
+        "distance": 0.92709213495254517, "name": "Chez Elle Creperie \u0026 Coffeehouse",
+        "neighborhoods": [], "url": "http://www.yelp.com/biz/chez-elle-creperie-and-coffeehouse-kansas-city",
+        "country": "USA", "avg_rating": 4.0, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=1713+Summit+St%2C+Kansas+City+64108",
+        "reviews": [{"rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/wixwF3hyZGFO7mtrDO1JkQ/ss",
+        "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "rating": 5, "user_url": "http://www.yelp.com/user_details?userid=PmvkYmzZuuiSm3sNQHLBSw",
+        "url": "http://www.yelp.com/biz/chez-elle-creperie-and-coffeehouse-kansas-city?hrid=Ta1-GPjcRBFf0SxSGXCO9w",
+        "mobile_uri": "/biz/chez-elle-creperie-and-coffeehouse-kansas-city?full=True\u0026hrid=Ta1-GPjcRBFf0SxSGXCO9w",
+        "text_excerpt": "The building this restaurant is in looks awesome. I think
+        there are apartments or condos above and it would be cool to live up there.
+        The neighborhood is...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/wixwF3hyZGFO7mtrDO1JkQ/ms",
+        "date": "2014-07-10", "user_name": "Grace S.", "id": "Ta1-GPjcRBFf0SxSGXCO9w"}],
+        "photo_url_small": "http://media4.fl.yelpcdn.com/bpthumb/52Vbz-OknSoFiHxv4ceRBw/ss"},
+        {"rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png",
+        "country_code": "US", "id": "JVmiGSDeJrRj5wm-w4EE6Q", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/one-more-cup-kansas-city",
+        "review_count": 54, "zip": "64114", "state": "MO", "rating_img_url_small":
+        "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png",
+        "address1": "7408 Wornall Rd", "address2": "", "address3": "", "phone": "8169943644",
+        "state_code": "MO", "categories": [{"category_filter": "coffee", "search_url":
+        "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=7408+Wornall+Rd%2C+Kansas+City+64114",
+        "name": "Coffee \u0026 Tea"}, {"category_filter": "desserts", "search_url":
+        "http://www.yelp.com/search?cflt=desserts\u0026find_desc=\u0026find_loc=7408+Wornall+Rd%2C+Kansas+City+64114",
+        "name": "Desserts"}, {"category_filter": "bakeries", "search_url": "http://www.yelp.com/search?cflt=bakeries\u0026find_desc=\u0026find_loc=7408+Wornall+Rd%2C+Kansas+City+64114",
+        "name": "Bakeries"}], "photo_url": "http://media4.fl.yelpcdn.com/bpthumb/uDn0Fp-Ur6uzaNG2-8wStg/ms",
+        "distance": 7.3801803588867188, "name": "One More Cup", "neighborhoods": [{"url":
+        "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Waldo%2C+Kansas+City%2C+MO",
+        "name": "Waldo"}], "url": "http://www.yelp.com/biz/one-more-cup-kansas-city",
+        "country": "USA", "avg_rating": 4.5, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=7408+Wornall+Rd%2C+Kansas+City+64114",
+        "reviews": [{"rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/vZJ1v8Q8rakpf5kirRWjsQ/ss",
+        "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "rating": 5, "user_url": "http://www.yelp.com/user_details?userid=rB06E6aUiEWBrvmYL-vXmg",
+        "url": "http://www.yelp.com/biz/one-more-cup-kansas-city?hrid=oxc7keBrUrD8YD1xsANWrQ",
+        "mobile_uri": "/biz/one-more-cup-kansas-city?full=True\u0026hrid=oxc7keBrUrD8YD1xsANWrQ",
+        "text_excerpt": "Big fan of this place so far (only been three times).\n\nEven
+        on a weekend afternoon, there has been a place to sit every time. This is
+        a big plus compared to...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/vZJ1v8Q8rakpf5kirRWjsQ/ms",
+        "date": "2014-04-05", "user_name": "Rob L.", "id": "oxc7keBrUrD8YD1xsANWrQ"}],
+        "photo_url_small": "http://media4.fl.yelpcdn.com/bpthumb/uDn0Fp-Ur6uzaNG2-8wStg/ss"},
+        {"rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png",
+        "country_code": "US", "id": "AA3UdNdxrSJ5pAeNNb9FaQ", "is_closed": false,
+        "city": "Leawood", "mobile_url": "http://m.yelp.com/biz/parisi-caf%C3%A9-leawood",
+        "review_count": 42, "zip": "66211", "state": "KS", "rating_img_url_small":
+        "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png",
+        "address1": "5245 W 116th Pl", "address2": "", "address3": "", "phone": "9136969999",
+        "state_code": "KS", "categories": [{"category_filter": "coffee", "search_url":
+        "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=5245+W+116th+Pl%2C+Leawood+66211",
+        "name": "Coffee \u0026 Tea"}, {"category_filter": "desserts", "search_url":
+        "http://www.yelp.com/search?cflt=desserts\u0026find_desc=\u0026find_loc=5245+W+116th+Pl%2C+Leawood+66211",
+        "name": "Desserts"}], "photo_url": "http://media4.fl.yelpcdn.com/bpthumb/RBOoM-Rk6GcG2TeNImKINg/ms",
+        "distance": 13.089875221252441, "name": "Parisi Caf\u00e9", "neighborhoods":
+        [], "url": "http://www.yelp.com/biz/parisi-caf%C3%A9-leawood", "country":
+        "USA", "avg_rating": 4.5, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=5245+W+116th+Pl%2C+Leawood+66211",
+        "reviews": [{"rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/OJYW7uyGZMgscwpse0JW0A/ss",
+        "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "rating": 4, "user_url": "http://www.yelp.com/user_details?userid=CgEIusKvpELy64nmpsm_Og",
+        "url": "http://www.yelp.com/biz/parisi-caf%C3%A9-leawood?hrid=r0oPH5zpnAj0gHOTGdNqZA",
+        "mobile_uri": "/biz/parisi-caf%C3%A9-leawood?full=True\u0026hrid=r0oPH5zpnAj0gHOTGdNqZA",
+        "text_excerpt": "First, disclaimer, I''m not a big coffee drinker but the
+        coffee actually was pretty good, had a rich coffee flavor, no grounds in the
+        coffee, not to strong...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/OJYW7uyGZMgscwpse0JW0A/ms",
+        "date": "2014-07-14", "user_name": "Ariel M.", "id": "r0oPH5zpnAj0gHOTGdNqZA"}],
+        "photo_url_small": "http://media4.fl.yelpcdn.com/bpthumb/RBOoM-Rk6GcG2TeNImKINg/ss"},
+        {"rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "country_code": "US", "id": "vWF00_RVgW671xR_WvYwDw", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/classic-rock-coffee-at-opera-house-kansas-city",
+        "review_count": 13, "zip": "64106", "state": "MO", "rating_img_url_small":
+        "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "address1": "500 Walnut St", "address2": "", "address3": "", "phone": "8168884858",
+        "state_code": "MO", "categories": [{"category_filter": "coffee", "search_url":
+        "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=500+Walnut+St%2C+Kansas+City+64106",
+        "name": "Coffee \u0026 Tea"}, {"category_filter": "bakeries", "search_url":
+        "http://www.yelp.com/search?cflt=bakeries\u0026find_desc=\u0026find_loc=500+Walnut+St%2C+Kansas+City+64106",
+        "name": "Bakeries"}, {"category_filter": "burgers", "search_url": "http://www.yelp.com/search?cflt=burgers\u0026find_desc=\u0026find_loc=500+Walnut+St%2C+Kansas+City+64106",
+        "name": "Burgers"}], "photo_url": "http://media2.fl.yelpcdn.com/bpthumb/1d1Jr39bG-wmaOacDxHTEA/ms",
+        "distance": 0.58631187677383423, "name": "Classic Rock Coffee at Opera House",
+        "neighborhoods": [{"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Rivermarket%2C+Kansas+City%2C+MO",
+        "name": "Rivermarket"}, {"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Greater+Downtown%2C+Kansas+City%2C+MO",
+        "name": "Greater Downtown"}], "url": "http://www.yelp.com/biz/classic-rock-coffee-at-opera-house-kansas-city",
+        "country": "USA", "avg_rating": 4.0, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=500+Walnut+St%2C+Kansas+City+64106",
+        "reviews": [{"rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/hapz3SAOeGsH7L8MZA9rkw/ss",
+        "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "rating": 4, "user_url": "http://www.yelp.com/user_details?userid=v067oPpP72AzIs7oZMnEUA",
+        "url": "http://www.yelp.com/biz/classic-rock-coffee-at-opera-house-kansas-city?hrid=oamj_gGli6aVlLGiWptBlA",
+        "mobile_uri": "/biz/classic-rock-coffee-at-opera-house-kansas-city?full=True\u0026hrid=oamj_gGli6aVlLGiWptBlA",
+        "text_excerpt": "This is one of my regular go-tos for lunch or a light dinner.  The
+        food is reasonably priced, with a large selection.  I have been pleased with
+        everything I...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/hapz3SAOeGsH7L8MZA9rkw/ms",
+        "date": "2014-03-19", "user_name": "Elizabeth F.", "id": "oamj_gGli6aVlLGiWptBlA"}],
+        "photo_url_small": "http://media2.fl.yelpcdn.com/bpthumb/1d1Jr39bG-wmaOacDxHTEA/ss"},
+        {"rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "country_code": "US", "id": "rnzG1D3LuvJhfPLWQr45og", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/opera-house-coffee-and-food-emporium-kansas-city",
+        "review_count": 33, "zip": "64106", "state": "MO", "rating_img_url_small":
+        "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "address1": "500 Walnut St", "address2": "", "address3": "", "phone": "8168884858",
+        "state_code": "MO", "categories": [{"category_filter": "coffee", "search_url":
+        "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=500+Walnut+St%2C+Kansas+City+64106",
+        "name": "Coffee \u0026 Tea"}, {"category_filter": "gourmet", "search_url":
+        "http://www.yelp.com/search?cflt=gourmet\u0026find_desc=\u0026find_loc=500+Walnut+St%2C+Kansas+City+64106",
+        "name": "Specialty Food"}], "photo_url": "http://media1.fl.yelpcdn.com/bpthumb/0oXcaOEp1qwQ0-bgZ0rERg/ms",
+        "distance": 0.61478924751281738, "name": "Opera House Coffee and Food Emporium",
+        "neighborhoods": [{"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Rivermarket%2C+Kansas+City%2C+MO",
+        "name": "Rivermarket"}, {"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Greater+Downtown%2C+Kansas+City%2C+MO",
+        "name": "Greater Downtown"}], "url": "http://www.yelp.com/biz/opera-house-coffee-and-food-emporium-kansas-city",
+        "country": "USA", "avg_rating": 4.0, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=500+Walnut+St%2C+Kansas+City+64106",
+        "reviews": [{"rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/xX43rnici1dGMIKbv1ASFg/ss",
+        "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "rating": 5, "user_url": "http://www.yelp.com/user_details?userid=QITPDLug6TfOR-xN0kC9qA",
+        "url": "http://www.yelp.com/biz/opera-house-coffee-and-food-emporium-kansas-city?hrid=1TIKL9WxQxkBrsPLgQhQhg",
+        "mobile_uri": "/biz/opera-house-coffee-and-food-emporium-kansas-city?full=True\u0026hrid=1TIKL9WxQxkBrsPLgQhQhg",
+        "text_excerpt": "I absolutely love this place. The atmosphere is awesome,
+        the food is great, and the coffee is delicious! They have a bakery, a grill,
+        coffee and smoothies,...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/xX43rnici1dGMIKbv1ASFg/ms",
+        "date": "2014-07-11", "user_name": "Mo G.", "id": "1TIKL9WxQxkBrsPLgQhQhg"}],
+        "photo_url_small": "http://media1.fl.yelpcdn.com/bpthumb/0oXcaOEp1qwQ0-bgZ0rERg/ss"},
+        {"rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "country_code": "US", "id": "pl1H1BVCo3L8rKns8bZV8A", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/latt%C3%A9land-espresso-and-tea-kansas-city-5",
+        "review_count": 48, "zip": "64105", "state": "MO", "rating_img_url_small":
+        "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "address1": "1201 Main St", "address2": "", "address3": "", "phone": "8164749889",
+        "state_code": "MO", "categories": [{"category_filter": "coffee", "search_url":
+        "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=1201+Main+St%2C+Kansas+City+64105",
+        "name": "Coffee \u0026 Tea"}], "photo_url": "http://media2.fl.yelpcdn.com/bpthumb/22xDrecNjCKmRGAaPa14wA/ms",
+        "distance": 0.24064464867115021, "name": "Latt\u00e9land Espresso \u0026 Tea",
+        "neighborhoods": [{"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Central+Business+District%2C+Kansas+City%2C+MO",
+        "name": "Central Business District"}, {"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Power+%26+Light+District%2C+Kansas+City%2C+MO",
+        "name": "Power \u0026 Light District"}, {"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Greater+Downtown%2C+Kansas+City%2C+MO",
+        "name": "Greater Downtown"}], "url": "http://www.yelp.com/biz/latt%C3%A9land-espresso-and-tea-kansas-city-5",
+        "country": "USA", "avg_rating": 4.0, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=1201+Main+St%2C+Kansas+City+64105",
+        "reviews": [{"rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/NFSTy-pbOYru8LBpWBsVSQ/ss",
+        "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "rating": 5, "user_url": "http://www.yelp.com/user_details?userid=QoYZN2TRRLKBEXFfjczLPQ",
+        "url": "http://www.yelp.com/biz/latt%C3%A9land-espresso-and-tea-kansas-city-5?hrid=oXVB7eILaud41uP0U9Ulhg",
+        "mobile_uri": "/biz/latt%C3%A9land-espresso-and-tea-kansas-city-5?full=True\u0026hrid=oXVB7eILaud41uP0U9Ulhg",
+        "text_excerpt": "Really smooth velvety cappuccino at this cool coffee shop
+        that sells photography wall art from local photographers! I like that. \n\nNice
+        baked goods, too!...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/NFSTy-pbOYru8LBpWBsVSQ/ms",
+        "date": "2014-03-20", "user_name": "Michael C.", "id": "oXVB7eILaud41uP0U9Ulhg"}],
+        "photo_url_small": "http://media2.fl.yelpcdn.com/bpthumb/22xDrecNjCKmRGAaPa14wA/ss"},
+        {"rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "country_code": "US", "id": "I5TyGsfaXexmKKXVno66mA", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/coffee-girls-cafe-kansas-city",
+        "review_count": 20, "zip": "64114", "state": "MO", "rating_img_url_small":
+        "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "address1": "7440 Washington St", "address2": "", "address3": "", "phone":
+        "8162212326", "state_code": "MO", "categories": [{"category_filter": "juicebars",
+        "search_url": "http://www.yelp.com/search?cflt=juicebars\u0026find_desc=\u0026find_loc=7440+Washington+St%2C+Kansas+City+64114",
+        "name": "Juice Bars \u0026 Smoothies"}, {"category_filter": "coffee", "search_url":
+        "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=7440+Washington+St%2C+Kansas+City+64114",
+        "name": "Coffee \u0026 Tea"}, {"category_filter": "cafes", "search_url": "http://www.yelp.com/search?cflt=cafes\u0026find_desc=\u0026find_loc=7440+Washington+St%2C+Kansas+City+64114",
+        "name": "Cafes"}], "photo_url": "http://media2.fl.yelpcdn.com/bpthumb/XY6DAeZ95zYlSPcJEKCJdQ/ms",
+        "distance": 7.4283328056335449, "name": "Coffee Girls Cafe", "neighborhoods":
+        [{"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Waldo%2C+Kansas+City%2C+MO",
+        "name": "Waldo"}], "url": "http://www.yelp.com/biz/coffee-girls-cafe-kansas-city",
+        "country": "USA", "avg_rating": 4.0, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=7440+Washington+St%2C+Kansas+City+64114",
+        "reviews": [{"rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/XlnUctRM2BaO-uJ_n78jgQ/ss",
+        "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "rating": 5, "user_url": "http://www.yelp.com/user_details?userid=79Z3l0wxdlGR3gK_f3cujw",
+        "url": "http://www.yelp.com/biz/coffee-girls-cafe-kansas-city?hrid=kD2QMcHAwZpnR68Hn-Wehg",
+        "mobile_uri": "/biz/coffee-girls-cafe-kansas-city?full=True\u0026hrid=kD2QMcHAwZpnR68Hn-Wehg",
+        "text_excerpt": "Some of my favorite coffee and juices in KC. I will go out
+        of my way to come here. A nice Soy Honey Bear always starts my day off great
+        and a Clean Green...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/XlnUctRM2BaO-uJ_n78jgQ/ms",
+        "date": "2014-07-09", "user_name": "Darcey R.", "id": "kD2QMcHAwZpnR68Hn-Wehg"}],
+        "photo_url_small": "http://media2.fl.yelpcdn.com/bpthumb/XY6DAeZ95zYlSPcJEKCJdQ/ss"},
+        {"rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png",
+        "country_code": "US", "id": "oXN5qT4cZgV4ZJA2mj-MVg", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/scratch-bakery-cafe-kansas-city",
+        "review_count": 5, "zip": "64105", "state": "MO", "rating_img_url_small":
+        "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png",
+        "address1": "310 W 8th St", "address2": "", "address3": "", "phone": "8164749966",
+        "state_code": "MO", "categories": [{"category_filter": "cafes", "search_url":
+        "http://www.yelp.com/search?cflt=cafes\u0026find_desc=\u0026find_loc=310+W+8th+St%2C+Kansas+City+64105",
+        "name": "Cafes"}, {"category_filter": "bakeries", "search_url": "http://www.yelp.com/search?cflt=bakeries\u0026find_desc=\u0026find_loc=310+W+8th+St%2C+Kansas+City+64105",
+        "name": "Bakeries"}], "photo_url": "http://media1.fl.yelpcdn.com/bpthumb/TSldSeiBl0yoxPuA61YeGQ/ms",
+        "distance": 0.56810140609741211, "name": "Scratch Bakery + Cafe", "neighborhoods":
+        [{"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Central+Business+District%2C+Kansas+City%2C+MO",
+        "name": "Central Business District"}, {"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Greater+Downtown%2C+Kansas+City%2C+MO",
+        "name": "Greater Downtown"}], "url": "http://www.yelp.com/biz/scratch-bakery-cafe-kansas-city",
+        "country": "USA", "avg_rating": 4.5, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=310+W+8th+St%2C+Kansas+City+64105",
+        "reviews": [{"rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/DhBY5nTxlG1OJ1S6YkCp7w/ss",
+        "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "rating": 4, "user_url": "http://www.yelp.com/user_details?userid=0eL3Kfrz1iOl3-3YvrVkcA",
+        "url": "http://www.yelp.com/biz/scratch-bakery-cafe-kansas-city?hrid=xiuJ3p1GU3gzjX8Css-JSw",
+        "mobile_uri": "/biz/scratch-bakery-cafe-kansas-city?full=True\u0026hrid=xiuJ3p1GU3gzjX8Css-JSw",
+        "text_excerpt": "Carbs. If you don''t like carbs, just stop here. Then again,
+        if you don''t like carbs, why are you looking into a bakery? Anyway, I walk
+        by this place every...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/DhBY5nTxlG1OJ1S6YkCp7w/ms",
+        "date": "2014-03-25", "user_name": "Alan M.", "id": "xiuJ3p1GU3gzjX8Css-JSw"}],
+        "photo_url_small": "http://media1.fl.yelpcdn.com/bpthumb/TSldSeiBl0yoxPuA61YeGQ/ss"},
+        {"rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "country_code": "US", "id": "RtqzFw5MxoCnQXUtEjdl-w", "is_closed": false,
+        "city": "Leawood", "mobile_url": "http://m.yelp.com/biz/the-roasterie-caf%C3%A9-leawood-leawood",
+        "review_count": 44, "zip": "66209", "state": "KS", "rating_img_url_small":
+        "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "address1": "4511 119th St", "address2": "", "address3": "", "phone": "9134288270",
+        "state_code": "KS", "categories": [{"category_filter": "coffee", "search_url":
+        "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=4511+119th+St%2C+Leawood+66209",
+        "name": "Coffee \u0026 Tea"}, {"category_filter": "bakeries", "search_url":
+        "http://www.yelp.com/search?cflt=bakeries\u0026find_desc=\u0026find_loc=4511+119th+St%2C+Leawood+66209",
+        "name": "Bakeries"}, {"category_filter": "bagels", "search_url": "http://www.yelp.com/search?cflt=bagels\u0026find_desc=\u0026find_loc=4511+119th+St%2C+Leawood+66209",
+        "name": "Bagels"}], "photo_url": "http://media2.fl.yelpcdn.com/bpthumb/bYA0lMBwcUd7bcYJbsh9vA/ms",
+        "distance": 13.290966987609863, "name": "The Roasterie Caf\u00e9 - Leawood",
+        "neighborhoods": [], "url": "http://www.yelp.com/biz/the-roasterie-caf%C3%A9-leawood-leawood",
+        "country": "USA", "avg_rating": 4.0, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=4511+119th+St%2C+Leawood+66209",
+        "reviews": [{"rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/xR3jFcN_tNsf71LWmt0bJg/ss",
+        "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "rating": 5, "user_url": "http://www.yelp.com/user_details?userid=nZq_AlFxmcu7qyIi3g3gvg",
+        "url": "http://www.yelp.com/biz/the-roasterie-caf%C3%A9-leawood-leawood?hrid=oQHzPdBwkQfE5svk2ZX4PQ",
+        "mobile_uri": "/biz/the-roasterie-caf%C3%A9-leawood-leawood?full=True\u0026hrid=oQHzPdBwkQfE5svk2ZX4PQ",
+        "text_excerpt": "Best coffee in the KC area. Hands down. And if you feel you''ve
+        been good today, get the wake up call. \n\nExcellent wifi\nRows of plugs along
+        every wall\nTwo...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/xR3jFcN_tNsf71LWmt0bJg/ms",
+        "date": "2014-07-12", "user_name": "Jack T.", "id": "oQHzPdBwkQfE5svk2ZX4PQ"}],
+        "photo_url_small": "http://media2.fl.yelpcdn.com/bpthumb/bYA0lMBwcUd7bcYJbsh9vA/ss"},
+        {"rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "country_code": "US", "id": "ptjsRyb25y6jJVuGH4_HjA", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/market-3-kansas-city",
+        "review_count": 18, "zip": "64105", "state": "MO", "rating_img_url_small":
+        "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "address1": "114 W 3rd St", "address2": "", "address3": "", "phone": "", "state_code":
+        "MO", "categories": [{"category_filter": "coffee", "search_url": "http://www.yelp.com/search?cflt=coffee\u0026find_desc=\u0026find_loc=114+W+3rd+St%2C+Kansas+City+64105",
+        "name": "Coffee \u0026 Tea"}, {"category_filter": "grocery", "search_url":
+        "http://www.yelp.com/search?cflt=grocery\u0026find_desc=\u0026find_loc=114+W+3rd+St%2C+Kansas+City+64105",
+        "name": "Grocery"}, {"category_filter": "delis", "search_url": "http://www.yelp.com/search?cflt=delis\u0026find_desc=\u0026find_loc=114+W+3rd+St%2C+Kansas+City+64105",
+        "name": "Delis"}], "photo_url": "http://media1.fl.yelpcdn.com/bpthumb/INk6FvcyVEJhuulbLZskkA/ms",
+        "distance": 0.78497046232223511, "name": "Market 3", "neighborhoods": [{"url":
+        "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Rivermarket%2C+Kansas+City%2C+MO",
+        "name": "Rivermarket"}, {"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Greater+Downtown%2C+Kansas+City%2C+MO",
+        "name": "Greater Downtown"}], "url": "http://www.yelp.com/biz/market-3-kansas-city",
+        "country": "USA", "avg_rating": 4.0, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=114+W+3rd+St%2C+Kansas+City+64105",
+        "reviews": [{"rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/fPUFU9Eyix6pVbV7fXw1wg/ss",
+        "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "rating": 5, "user_url": "http://www.yelp.com/user_details?userid=zjmtxKUQlzhGVZx510QNCQ",
+        "url": "http://www.yelp.com/biz/market-3-kansas-city?hrid=xii-x5tdAd7L3jV_dVjwog",
+        "mobile_uri": "/biz/market-3-kansas-city?full=True\u0026hrid=xii-x5tdAd7L3jV_dVjwog",
+        "text_excerpt": "This place is great! It''s your local diner/deli and neighborhood
+        market all rolled into one. Lot of fresh ingredients on the menu and local
+        products on the...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/fPUFU9Eyix6pVbV7fXw1wg/ms",
+        "date": "2014-06-27", "user_name": "Mathew G.", "id": "xii-x5tdAd7L3jV_dVjwog"}],
+        "photo_url_small": "http://media1.fl.yelpcdn.com/bpthumb/INk6FvcyVEJhuulbLZskkA/ss"},
+        {"rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png",
+        "country_code": "US", "id": "qIR7Dsnvfy72n_5Wxfa-fw", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/the-caffeine-crawl-kansas-city",
+        "review_count": 2, "zip": "", "state": "MO", "rating_img_url_small": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png",
+        "address1": "", "address2": "", "address3": "", "phone": "", "state_code":
+        "MO", "categories": [{"category_filter": "localflavor", "search_url": "http://www.yelp.com/search?cflt=localflavor\u0026find_desc=\u0026find_loc=Kansas+City",
+        "name": "Local Flavor"}], "photo_url": "http://media3.fl.yelpcdn.com/bpthumb/wGwaPolob-gZPpUZy9Q2Hg/ms",
+        "distance": 0.0, "name": "The Caffeine Crawl", "neighborhoods": [{"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Central+Business+District%2C+Kansas+City%2C+MO",
+        "name": "Central Business District"}, {"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Greater+Downtown%2C+Kansas+City%2C+MO",
+        "name": "Greater Downtown"}], "url": "http://www.yelp.com/biz/the-caffeine-crawl-kansas-city",
+        "country": "USA", "avg_rating": 4.5, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=Kansas+City",
+        "reviews": [{"rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/i2IQI82u4ilOq6FYSskDiQ/ss",
+        "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "rating": 5, "user_url": "http://www.yelp.com/user_details?userid=Y7H-38gAFmlDPBE-PyGK3g",
+        "url": "http://www.yelp.com/biz/the-caffeine-crawl-kansas-city?hrid=GcSCF2KVGvaSrCTsd7FwGA",
+        "mobile_uri": "/biz/the-caffeine-crawl-kansas-city?full=True\u0026hrid=GcSCF2KVGvaSrCTsd7FwGA",
+        "text_excerpt": "Third year for me and this time I went to the Friday evening
+        crawl.  Same awesome experience with a few new coffee shops.  I couldn''t
+        do the daytime crawls...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/i2IQI82u4ilOq6FYSskDiQ/ms",
+        "date": "2013-11-02", "user_name": "David G.", "id": "GcSCF2KVGvaSrCTsd7FwGA"}],
+        "photo_url_small": "http://media3.fl.yelpcdn.com/bpthumb/wGwaPolob-gZPpUZy9Q2Hg/ss"},
+        {"rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "country_code": "US", "id": "Gyl-VymQv7Wa4eCWKBx5Gg", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/utilitarian-workshop-kansas-city",
+        "review_count": 1, "zip": "64108", "state": "MO", "rating_img_url_small":
+        "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "address1": "1659 Summit", "address2": "", "address3": "", "phone": "", "state_code":
+        "MO", "categories": [{"category_filter": "interiordesign", "search_url": "http://www.yelp.com/search?cflt=interiordesign\u0026find_desc=\u0026find_loc=1659+Summit%2C+Kansas+City+64108",
+        "name": "Interior Design"}, {"category_filter": "furniture", "search_url":
+        "http://www.yelp.com/search?cflt=furniture\u0026find_desc=\u0026find_loc=1659+Summit%2C+Kansas+City+64108",
+        "name": "Furniture Stores"}], "photo_url": "http://media2.fl.yelpcdn.com/bpthumb/YJBkHM1YUB48XZjrTj7zzQ/ms",
+        "distance": 0.87875097990036011, "name": "Utilitarian Workshop", "neighborhoods":
+        [], "url": "http://www.yelp.com/biz/utilitarian-workshop-kansas-city", "country":
+        "USA", "avg_rating": 5.0, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=1659+Summit%2C+Kansas+City+64108",
+        "reviews": [{"rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/x013CMIM6_sGRdUi5ZZI-g/ss",
+        "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "rating": 5, "user_url": "http://www.yelp.com/user_details?userid=f1MFQxTZAWJnRQdrouLg_A",
+        "url": "http://www.yelp.com/biz/utilitarian-workshop-kansas-city?hrid=8kPEN968PHNQeOYoUGByow",
+        "mobile_uri": "/biz/utilitarian-workshop-kansas-city?full=True\u0026hrid=8kPEN968PHNQeOYoUGByow",
+        "text_excerpt": "Wow. This place is amazing and I want to own everything in
+        it. Now if only I was loaded.\n\nA long time coming, Utilitarian Workshop
+        finally opened their...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/x013CMIM6_sGRdUi5ZZI-g/ms",
+        "date": "2013-07-23", "user_name": "Matt E.", "id": "8kPEN968PHNQeOYoUGByow"}],
+        "photo_url_small": "http://media2.fl.yelpcdn.com/bpthumb/YJBkHM1YUB48XZjrTj7zzQ/ss"},
+        {"rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c7fb9aff59f9/ico/stars/v1/stars_2_half.png",
+        "country_code": "US", "id": "RouiJYfmU1jVUiW6PCt-HQ", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/wine-walk-on-delaware-kansas-city",
+        "review_count": 5, "zip": "64105", "state": "MO", "rating_img_url_small":
+        "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/8e8633e5f8f0/ico/stars/v1/stars_small_2_half.png",
+        "address1": "3rd St \u0026 Delaware St", "address2": "", "address3": "", "phone":
+        "", "state_code": "MO", "categories": [{"category_filter": "festivals", "search_url":
+        "http://www.yelp.com/search?cflt=festivals\u0026find_desc=\u0026find_loc=3rd+St+%26+Delaware+St%2C+Kansas+City+64105",
+        "name": "Festivals"}], "photo_url": "http://media4.fl.yelpcdn.com/bpthumb/aWBpIFpCQ8iDuxyy3udYow/ms",
+        "distance": 0.75632196664810181, "name": "Wine Walk on Delaware", "neighborhoods":
+        [{"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Rivermarket%2C+Kansas+City%2C+MO",
+        "name": "Rivermarket"}, {"url": "http://www.yelp.com/search?exclude_start=True\u0026find_desc=\u0026find_loc=Greater+Downtown%2C+Kansas+City%2C+MO",
+        "name": "Greater Downtown"}], "url": "http://www.yelp.com/biz/wine-walk-on-delaware-kansas-city",
+        "country": "USA", "avg_rating": 2.5, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=3rd+St+%26+Delaware+St%2C+Kansas+City+64105",
+        "reviews": [{"rating_img_url_small": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/902abeed0983/ico/stars/v1/stars_small_3.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/Vwx0slhFSFevnmC71ek-bw/ss",
+        "rating_img_url": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/34bc8086841c/ico/stars/v1/stars_3.png",
+        "rating": 3, "user_url": "http://www.yelp.com/user_details?userid=FFumt63lmec48nWbevjLvQ",
+        "url": "http://www.yelp.com/biz/wine-walk-on-delaware-kansas-city?hrid=fiN1bb4obtaiPzF_zZbW6A",
+        "mobile_uri": "/biz/wine-walk-on-delaware-kansas-city?full=True\u0026hrid=fiN1bb4obtaiPzF_zZbW6A",
+        "text_excerpt": "I like wine.  A lot.  So, I was really looking forward to
+        this event.  For some reason, I also expected that this walk would give me
+        information about the...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/Vwx0slhFSFevnmC71ek-bw/ms",
+        "date": "2012-08-20", "user_name": "Kirun M.", "id": "fiN1bb4obtaiPzF_zZbW6A"}],
+        "photo_url_small": "http://media4.fl.yelpcdn.com/bpthumb/aWBpIFpCQ8iDuxyy3udYow/ss"},
+        {"rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "country_code": "US", "id": "eV3xYOg95vXY3lvyC0lusw", "is_closed": false,
+        "city": "Kansas City", "mobile_url": "http://m.yelp.com/biz/coffeecakekc-kansas-city",
+        "review_count": 18, "zip": "64101", "state": "MO", "rating_img_url_small":
+        "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "address1": "", "address2": "", "address3": "", "phone": "9135682380", "state_code":
+        "MO", "categories": [{"category_filter": "foodtrucks", "search_url": "http://www.yelp.com/search?cflt=foodtrucks\u0026find_desc=\u0026find_loc=Kansas+City+64101",
+        "name": "Food Trucks"}], "photo_url": "http://media1.fl.yelpcdn.com/bpthumb/3hM93u_F_7iomiDcmjOHYQ/ms",
+        "distance": 1.1705374717712402, "name": "CoffeeCakeKC", "neighborhoods": [],
+        "url": "http://www.yelp.com/biz/coffeecakekc-kansas-city", "country": "USA",
+        "avg_rating": 5.0, "nearby_url": "http://www.yelp.com/search?find_desc=\u0026find_loc=Kansas+City+64101",
+        "reviews": [{"rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+        "user_photo_url_small": "http://media1.fl.yelpcdn.com/upthumb/TE_WkNIZcZfrtp3PAJAPjA/ss",
+        "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+        "rating": 5, "user_url": "http://www.yelp.com/user_details?userid=FXAEb55bk0hfsrjLMMC-sQ",
+        "url": "http://www.yelp.com/biz/coffeecakekc-kansas-city?hrid=yc1Lo8qacM5w9r2QVgFzug",
+        "mobile_uri": "/biz/coffeecakekc-kansas-city?full=True\u0026hrid=yc1Lo8qacM5w9r2QVgFzug",
+        "text_excerpt": "I know this just my opinion , but i have to say wonderful
+        customer service.  I once again forgot what normal coffee I get.  I was scared
+        because i keep...", "user_photo_url": "http://media1.fl.yelpcdn.com/upthumb/TE_WkNIZcZfrtp3PAJAPjA/ms",
+        "date": "2014-05-25", "user_name": "Suzanne B.", "id": "yc1Lo8qacM5w9r2QVgFzug"}],
+        "photo_url_small": "http://media1.fl.yelpcdn.com/bpthumb/3hM93u_F_7iomiDcmjOHYQ/ss"}]}'
+    http_version: 
+  recorded_at: Fri, 18 Jul 2014 14:50:20 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=412%20Delaware%20Kansas%20City%20MO%20&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 18 Jul 2014 16:06:36 GMT
+      Expires:
+      - Sat, 19 Jul 2014 16:06:36 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "412",
+                       "short_name" : "412",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Delaware Street",
+                       "short_name" : "Delaware St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "River Market",
+                       "short_name" : "River Market",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Kansas City",
+                       "short_name" : "KCMO",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Kaw",
+                       "short_name" : "Kaw",
+                       "types" : [ "administrative_area_level_3", "political" ]
+                    },
+                    {
+                       "long_name" : "Jackson County",
+                       "short_name" : "Jackson County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Missouri",
+                       "short_name" : "MO",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "64105",
+                       "short_name" : "64105",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "412 Delaware Street, Kansas City, MO 64105, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.10840200000001,
+                       "lng" : -94.584417
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.10975098029151,
+                          "lng" : -94.58306801970851
+                       },
+                       "southwest" : {
+                          "lat" : 39.10705301970851,
+                          "lng" : -94.58576598029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "street_address" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Fri, 18 Jul 2014 16:06:36 GMT
+recorded_with: VCR 2.9.2
