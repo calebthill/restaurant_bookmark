@@ -27,7 +27,7 @@
         <ul class="nav navbar-nav" id="nav-links">
             <% if user_signed_in? %>
               <li><%= link_to "All Restaurants", restaurants_path %></li>
-              <li><%= link_to "Favorite Restaurants", favorite_restaurants_path %></li>
+              <li><%= link_to "Your Profile", favorite_restaurants_path %></li>
             <% end %>
         </ul>
         <p class="navbar-text pull-right">
@@ -45,8 +45,11 @@
   <%= render "welcome/login_modal" %>
   <%= render "welcome/sign_up_modal" %>
 
+
 <%= yield :jumbotron %>
-<%= notice %>
+<% flash.each do |name, msg| %>
+  <%= content_tag(:div, msg, class: "alert alert-info") %>
+<% end %>
 <div class="container">
   <%= yield %>
 </div>

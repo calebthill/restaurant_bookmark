@@ -2,10 +2,10 @@
   <li>
     <%= link_to 'Favorites', favorite_restaurants_path, role: 'tab' %>
   <li>
-    <%= link_to 'Search', search_path, role: 'tab' %>
+    <%= link_to 'Search Yelp!', search_path, role: 'tab' %>
   </li>
   <li class="active">
-    <%= link_to 'Chart', chart_path, role: 'tab' %>
+    <%= link_to 'Category Chart', chart_path, role: 'tab' %>
   </li>
 </ul>
 <% if @favorite_restaurants.empty? %>
