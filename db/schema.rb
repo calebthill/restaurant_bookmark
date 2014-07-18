@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20140715203548) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "category"
-    t.string   "yelp_photo_url"
     t.integer  "rating"
+    t.string   "yelp_photo_url"
   end
 
   create_table "users", force: true do |t|

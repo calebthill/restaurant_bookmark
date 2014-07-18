@@ -2,7 +2,7 @@ class Restaurant < ActiveRecord::Base
   geocoded_by :full_address
   after_validation :geocode, if: :address_changed?
 
-  paginates_per 15
+  paginates_per 16
 
   belongs_to :user
   has_many :favorite_restaurants
