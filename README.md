@@ -6,3 +6,5 @@ FavorEats is an app I built during Launch Academy. It allows a user to search th
 ![alt tag](https://cloud.githubusercontent.com/assets/6216931/3625733/a1c02a04-0e71-11e4-94a5-0890334b991d.png)
 
 ![alt tag](https://cloud.githubusercontent.com/assets/6216931/3625737/a9356178-0e71-11e4-8d06-dde958258886.png)
+
+![alt tag](https://cloud.githubusercontent.com/assets/6216931/3625734/a615fa16-0e71-11e4-952a-9e89b15f4334.png)
