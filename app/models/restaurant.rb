@@ -20,6 +20,14 @@ class Restaurant < ActiveRecord::Base
     user.restaurants.include?(self)
   end
 
+  def self.search(search)
+    if search
+      Restaurant.where("name || category ILIKE '%#{search}%'")
+    else
+      Restaurant.all
+    end
+  end
+
   def full_address
     "#{address} #{city} #{state} #{zipcode}"
   end

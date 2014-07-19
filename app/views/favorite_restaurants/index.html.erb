@@ -11,7 +11,11 @@
 <% if current_user.restaurants == [] %>
   <h2>You don't have any Favorite Restaurants yet!</h2>
 <% else %>
-
+  <br>
+  <%= form_tag(favorite_restaurants_path, method: :get, class: "form-inline") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Restaurants or Category", class: "form-control" %>
+    <%= submit_tag "Search", class: "btn btn-default form-group", name: nil %>
+  <% end %>
   <div class="row">
     <% @favorite_restaurants.each do |restaurant| %>
       <div class="col-md-3 col-sm-6 col-xs-6 test">

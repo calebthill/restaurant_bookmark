@@ -1,9 +1,17 @@
-<h1>All Restaurants</h1>
+<div class="col-md-4 col-sm-6 col-xs-12">
+  <h1>All Restaurants</h1>
 
-<ul>
-  <% @restaurants.each do |restaurant| %>
-    <li class="list_items"><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+  <%= form_tag(restaurants_path, method: :get, class: "form-inline") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Restaurants or Category", class: "form-control" %>
+    <%= submit_tag "Search", class: "btn btn-default form-group", name: nil %>
   <% end %>
-</ul>
 
-<%= paginate @restaurants %>
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li class="list_items"><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <% end %>
+  </ul>
+
+  <%= paginate @restaurants %>
+</div>
+

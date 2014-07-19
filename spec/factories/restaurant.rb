@@ -6,6 +6,7 @@ FactoryGirl.define do
     state "MA"
     zipcode "444444"
     phone "8167398888"
+    category "French"
 
     user
   end
