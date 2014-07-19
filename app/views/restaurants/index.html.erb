@@ -2,7 +2,7 @@
   <h1>All Restaurants</h1>
 
   <%= form_tag(restaurants_path, method: :get, class: "form-inline") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Restaurants", class: "form-control" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Restaurants or Category", class: "form-control" %>
     <%= submit_tag "Search", class: "btn btn-default form-group", name: nil %>
   <% end %>
 

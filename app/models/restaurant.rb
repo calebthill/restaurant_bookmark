@@ -22,7 +22,7 @@ class Restaurant < ActiveRecord::Base
 
   def self.search(search)
     if search
-      Restaurant.where("name ILIKE '%#{search}%'")
+      Restaurant.where("name || category ILIKE '%#{search}%'")
     else
       Restaurant.all
     end
