@@ -1,7 +1,7 @@
 class FavoriteRestaurantsController < ApplicationController
   def index
     @restaurant = Restaurant.new
-    @favorite_restaurants = current_user.restaurants.order(rating: :desc).page params[:page]
+    @favorite_restaurants = current_user.restaurants.order(rating: :desc)
   end
 
   def create
@@ -44,7 +44,7 @@ class FavoriteRestaurantsController < ApplicationController
   end
 
   def chart
-    @favorite_restaurants = current_user.restaurants.order(rating: :desc).page params[:page]
+    @favorite_restaurants = current_user.restaurants
   end
 end
 
