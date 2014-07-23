@@ -17,6 +17,7 @@ class FavoriteRestaurantsController < ApplicationController
         redirect_to favorite_restaurants_path
       end
     else
+      # takes data from yelp and puts it in local DB
       @restaurant = Restaurant.find_or_create_by(
         name: params[:restaurant],
         address: params[:address],
