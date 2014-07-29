@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :friendships
+  has_many :friends, through: :friendships
   has_many :comments
   has_many :favorite_restaurants
   has_many :restaurants, through: :favorite_restaurants
