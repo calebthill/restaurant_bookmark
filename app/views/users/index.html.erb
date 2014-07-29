@@ -1,5 +1,8 @@
 <h2>All Users</h2>
 
 <% @users.each do |user| %>
-  <li><%= "#{user.first_name} #{user.last_name}"%><%= link_to "Follow", friendships_path(friend_id: user), method: :post %></li>
+  <li><%= "#{user.first_name} #{user.last_name}"%>
+      <% if !current_user.already_followed(user) %>
+        <%= link_to "Follow", friendships_path(friend_id: user), method: :post %></li>
+      <% end %>
 <% end %>

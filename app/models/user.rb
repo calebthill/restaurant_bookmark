@@ -9,4 +9,12 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def already_followed(other_user)
+    friends_array = []
+    self.friendships.each do |x|
+      friends_array << x.friend
+    end
+    friends_array.include?(other_user)
+  end
 end
