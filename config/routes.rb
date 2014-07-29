@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  resources :users, only: :index
   resources :favorite_restaurants, only: [:index, :new, :create, :show, :destroy]
   resources :restaurants, only: [:index, :new, :create, :show] do
     resources :comments, only: [:create, :show ]
