@@ -45,7 +45,6 @@
   <%= render "welcome/login_modal" %>
   <%= render "welcome/sign_up_modal" %>
 
-
 <%= yield :jumbotron %>
 <% flash.each do |name, msg| %>
   <%= content_tag(:div, msg, class: "alert alert-info") %>
