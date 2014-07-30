@@ -11,4 +11,5 @@ FavorEats is an app I built during Launch Academy. It allows a user to search th
 ![alt tag](https://cloud.githubusercontent.com/assets/6216931/3625734/a615fa16-0e71-11e4-952a-9e89b15f4334.png)
 
 Heroku app (BETA version) http://favoreats.herokuapp.com/
+
 7/30/14 Currently working on a social feature using a self referential association. 
