@@ -1,13 +1,24 @@
 <h2>All Users</h2>
 
 <% @users.each do |user| %>
-  <li><%= "#{user.first_name} #{user.last_name}"%>
-      <% if !current_user.already_followed(user) %>
-        <%= link_to "Follow", friendships_path(friend_id: user), method: :post %></li>
-      <% end %>
+  <li>
+    <%= "#{user.first_name} #{user.last_name}" %>
+    <% if !current_user.already_followed(user) %>
+      <%= link_to "Follow", friendships_path(friend_id: user), method: :post %>
+    <% end %>
+  </li>
 <% end %>
 
 <h3>Following</h3>
 <% current_user.friendships.each do |x| %>
-  <li><%= x.friend.first_name %></li>
+  <li>
+    <%= x.friend.first_name %>
+  </li>
+<% end %>
+
+<h3>Followed by</h3>
+<% current_user.inverse_friends.each do |user| %>
+  <li>
+    <%= user.first_name %>
+  </li>
 <% end %>
