@@ -9,16 +9,23 @@
   </li>
 <% end %>
 
+
 <h3>Following</h3>
 <% current_user.friendships.each do |x| %>
   <li>
-    <%= x.friend.first_name %>
+    <% if x.friend %>
+      <%= x.friend.first_name %>
+      <%= link_to "Unfollow", friendship_path(x), method: :delete %>
+    <% end %>
   </li>
 <% end %>
 
-<h3>Followed by</h3>
-<% current_user.inverse_friends.each do |user| %>
-  <li>
-    <%= user.first_name %>
-  </li>
+
+<% if current_user.inverse_friends %>
+  <h3>Followed by</h3>
+  <% current_user.inverse_friends.each do |user| %>
+    <li>
+      <%= user.first_name %>
+    </li>
+  <% end %>
 <% end %>

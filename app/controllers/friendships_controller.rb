@@ -4,12 +4,19 @@ class FriendshipsController < ApplicationController
     # binding.pry
     if @friendship.save
       flash[:notice] = "Added as friend"
-      redirect_to favorite_restaurants_path
+      redirect_to users_path
     else
       render :new
     end
   end
 
   def destroy
+    @friendship = current_user.friendships.find(params[:id])
+    if @friendship.destroy
+      flash[:notice] = "unfollowed"
+      redirect_to users_path
+    else
+      flash[:notice] = "Oops, that didn't work!"
+    end
   end
 end
