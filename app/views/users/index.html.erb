@@ -6,3 +6,8 @@
         <%= link_to "Follow", friendships_path(friend_id: user), method: :post %></li>
       <% end %>
 <% end %>
+
+<h3>Following</h3>
+<% current_user.friendships.each do |x| %>
+  <li><%= x.friend.first_name %></li>
+<% end %>
