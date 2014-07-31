@@ -12,4 +12,4 @@ FavorEats is an app I built during Launch Academy. It allows a user to search th
 
 Heroku app (BETA version) http://favoreats.herokuapp.com/
 
-7/30/14 Currently working on a social feature using a self referential association so a user can follow or unfollow other users. 
+7/30/14 Currently working on a social feature using a self referential association so a user can follow or unfollow other users, compare charts and recomend restaurants! 
