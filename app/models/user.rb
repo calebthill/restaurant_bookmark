@@ -21,4 +21,14 @@ class User < ActiveRecord::Base
     end
     friends_array.include?(other_user)
   end
+
+  def format_restaurants(restaurants)
+    summary = {}
+    restaurants.each do |r|
+      summary[r.category] ||= 0
+      summary[r.category] += 1
+    end
+    summary = summary.to_a
+    summary.unshift(['Restaurants', 'Food type'])
+  end
 end
