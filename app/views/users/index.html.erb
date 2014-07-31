@@ -27,7 +27,7 @@
         <% current_user.friendships.each do |x| %>
           <li>
             <% if x.friend %>
-              <%= x.friend.first_name %>
+              <%= link_to "#{x.friend.first_name} #{x.friend.last_name}", user_path(x) %>
               <%= link_to "Unfollow", friendship_path(x), method: :delete %>
             <% end %>
           </li>

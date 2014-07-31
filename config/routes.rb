@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :friendships, only: [:create, :destroy]
-  resources :users, only: :index
+  resources :users, only: [:index, :show]
   resources :favorite_restaurants, only: [:index, :new, :create, :show, :destroy]
   resources :restaurants, only: [:index, :new, :create, :show] do
     resources :comments, only: [:create, :show ]
