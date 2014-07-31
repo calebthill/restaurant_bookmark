@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def already_followed(other_user)
+    # binding.pry
     friends_array = []
     self.friendships.each do |x|
       friends_array << x.friend
