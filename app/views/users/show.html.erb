@@ -1,0 +1,20 @@
+<h2><%= @user.first_name %></h2>
+
+<% if @user.restaurants == [] %>
+  <h3><%= "#{@user.first_name} dosn't have any favorite restaurants yet!" %></h3>
+<% else %>
+  <br>
+
+  <div class="row">
+    <% @user.restaurants.each do |restaurant| %>
+      <div class="col-md-3 col-sm-6 col-xs-6 test">
+        <div class= "restaurant-box"><%= link_to restaurant_path(restaurant) do %>
+          <%= image_tag(restaurant.yelp_photo_url, class: "yelp_photo img-responsive")%>
+          <div class= "name"><%= restaurant.name %></div>
+          <%= image_tag(restaurant.yelp_review, class: "yelp_stars") %>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
