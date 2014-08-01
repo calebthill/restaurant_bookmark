@@ -1,7 +1,7 @@
 <h2>All Users</h2>
 
 <% @users.each do |user| %>
-  <li>
+  <li class = "list_items">
     <%= "#{user.first_name} #{user.last_name}" %>
     <% if !current_user.already_followed(user) %>
       <%= link_to "Follow", friendships_path(friend_id: user), method: :post %>
@@ -10,7 +10,7 @@
 <% end %>
 
 
-<h3>Following</h3>
+<h2>Following</h2>
 
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#following">
   <%= current_user.friendships.count %>
@@ -42,7 +42,7 @@
 </div>
 
 
-<h3>Followed by</h3>
+<h2>Followed by</h2>
 
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#followed_by">
   <%= current_user.inverse_friends.count %>
