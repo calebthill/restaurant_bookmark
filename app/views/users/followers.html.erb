@@ -12,13 +12,13 @@
   </li>
 </ul>
 
-<div class = "col-md-4">
-  <h3>Following</h3>
 
-  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#following">
-    <%= current_user.friendships.count %>
-  </button>
-</div>
+<h2>Following</h2>
+
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#following">
+  <%= current_user.friendships.count %>
+</button>
+
 
 <div class="modal fade" id="following" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -31,7 +31,7 @@
         <% current_user.friendships.each do |x| %>
           <li>
             <% if x.friend %>
-              <%= link_to "#{x.friend.first_name} #{x.friend.last_name}", user_path(x.friend) %>
+              <h4><%= link_to "#{x.friend.first_name} #{x.friend.last_name}", user_path(x.friend) %></h4>
               <%= link_to "Unfollow", friendship_path(x), method: :delete %>
             <% end %>
           </li>
@@ -45,13 +45,13 @@
   </div>
 </div>
 
-<div class= "col-md-4">
-  <h3>Followed by</h3>
 
-  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#followed_by">
-    <%= current_user.inverse_friends.count %>
-  </button>
-</div>
+<h2>Followed by</h2>
+
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#followed_by">
+  <%= current_user.inverse_friends.count %>
+</button>
+
 
 <div class="modal fade" id="followed_by" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -63,7 +63,7 @@
       <div class="modal-body">
         <% current_user.inverse_friends.each do |user| %>
           <li>
-            <%= user.first_name %>
+            <h4><%= user.first_name %></h4>
           </li>
         <% end %>
       </div>
