@@ -6,16 +6,25 @@
   <li>
     <%= link_to 'Category Chart', chart_path, role: 'tab' %>
   </li>
+   <li>
+    <%= link_to 'Followers', followers_path, role: 'tab' %>
+  </li>
 </ul>
 
 <% if current_user.restaurants == [] %>
   <h2>You don't have any Favorite Restaurants yet!</h2>
 <% else %>
   <br>
-  <%= form_tag(favorite_restaurants_path, method: :get, class: "form-inline") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Restaurants or Category", class: "form-control" %>
-    <%= submit_tag "Search", class: "btn btn-default form-group", name: nil %>
-  <% end %>
+  <form role="search">
+    <div class="input-group">
+      <%= form_tag(restaurants_path, method: :get, class: "form-inline") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Restaurants or Categories", class: "form-control" %>
+      <div class="input-group-btn">
+        <%= submit_tag "Search", class: "btn btn-default form-group", name: nil %>
+      <% end %>
+      </div>
+    </div>
+  </form>
   <div class="row">
     <% @favorite_restaurants.each do |restaurant| %>
       <div class="col-md-3 col-sm-6 col-xs-6 test">

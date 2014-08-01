@@ -1,0 +1,76 @@
+<ul class="nav nav-tabs" role="tablist" id="myTab">
+  <li>
+    <%= link_to 'Favorites', favorite_restaurants_path, role: 'tab' %>
+  <li>
+    <%= link_to 'Search Yelp!', search_path, role: 'tab' %>
+  </li>
+  <li>
+    <%= link_to 'Category Chart', chart_path, role: 'tab' %>
+  </li>
+  <li class="active">
+    <%= link_to 'Followers', followers_path, role: 'tab' %>
+  </li>
+</ul>
+
+
+<h2>Following</h2>
+
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#following">
+  <%= current_user.friendships.count %>
+</button>
+
+
+<div class="modal fade" id="following" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Following</h4>
+      </div>
+      <div class="modal-body">
+        <% current_user.friendships.each do |x| %>
+          <li>
+            <% if x.friend %>
+              <h4><%= link_to "#{x.friend.first_name} #{x.friend.last_name}", user_path(x.friend) %></h4>
+              <%= link_to "Unfollow", friendship_path(x), method: :delete %>
+            <% end %>
+          </li>
+        <% end %>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2>Followed by</h2>
+
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#followed_by">
+  <%= current_user.inverse_friends.count %>
+</button>
+
+
+<div class="modal fade" id="followed_by" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Followed By</h4>
+      </div>
+      <div class="modal-body">
+        <% current_user.inverse_friends.each do |user| %>
+          <li>
+            <h4><%= user.first_name %></h4>
+          </li>
+        <% end %>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
