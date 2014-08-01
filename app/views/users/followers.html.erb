@@ -1,3 +1,17 @@
+<ul class="nav nav-tabs" role="tablist" id="myTab">
+  <li>
+    <%= link_to 'Favorites', favorite_restaurants_path, role: 'tab' %>
+  <li>
+    <%= link_to 'Search Yelp!', search_path, role: 'tab' %>
+  </li>
+  <li>
+    <%= link_to 'Category Chart', chart_path, role: 'tab' %>
+  </li>
+  <li class="active">
+    <%= link_to 'Followers', followers_path, role: 'tab' %>
+  </li>
+</ul>
+
 <div class = "col-md-4">
   <h3>Following</h3>
 
