@@ -18,7 +18,7 @@
   <form role="search">
     <div class="input-group">
       <%= form_tag(restaurants_path, method: :get, class: "form-inline") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Restaurants", class: "form-control" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Restaurants or Categories", class: "form-control" %>
       <div class="input-group-btn">
         <%= submit_tag "Search", class: "btn btn-default form-group", name: nil %>
       <% end %>
