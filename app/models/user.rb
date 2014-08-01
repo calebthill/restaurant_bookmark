@@ -32,4 +32,12 @@ class User < ActiveRecord::Base
     summary = summary.to_a
     summary.unshift(['Restaurants', 'Food type'])
   end
+
+  def self.search(search)
+    if search
+      User.where("first_name || last_name ILIKE '%#{search}%'")
+    else
+      User.all
+    end
+  end
 end
