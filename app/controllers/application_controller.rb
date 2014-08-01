@@ -11,6 +11,15 @@ class ApplicationController < ActionController::Base
     favorite_restaurants_path
   end
 
+  def check_following
+    follower = User.find(user = params["id"])
+    if current_user.friends.include?(follower)
+      user_path(params["id"])
+    else
+      redirect_to users_path, notice: 'You must follow the user before viewing their restaurants!'
+    end
+  end
+
   protected
 
   def configure_permitted_parameters
