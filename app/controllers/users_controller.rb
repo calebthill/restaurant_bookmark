@@ -8,6 +8,5 @@ class UsersController < ApplicationController
   end
 
   def followers
-
   end
 end

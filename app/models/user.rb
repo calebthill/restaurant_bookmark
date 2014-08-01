@@ -22,7 +22,6 @@ class User < ActiveRecord::Base
   end
 
   def format_restaurants(restaurants)
-    # binding.pry
     summary = {}
     restaurants.each do |r|
       summary[r.category] ||= 0
