@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :check_following, only: :show
 
   def index
-    @users = User.all
+    @users = User.order(:first_name).page params[:page]
   end
 
   def show
