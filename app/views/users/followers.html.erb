@@ -1,0 +1,62 @@
+<div class = "col-md-4">
+  <h3>Following</h3>
+
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#following">
+    <%= current_user.friendships.count %>
+  </button>
+</div>
+
+<div class="modal fade" id="following" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Following</h4>
+      </div>
+      <div class="modal-body">
+        <% current_user.friendships.each do |x| %>
+          <li>
+            <% if x.friend %>
+              <%= link_to "#{x.friend.first_name} #{x.friend.last_name}", user_path(x.friend) %>
+              <%= link_to "Unfollow", friendship_path(x), method: :delete %>
+            <% end %>
+          </li>
+        <% end %>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class= "col-md-4">
+  <h3>Followed by</h3>
+
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#followed_by">
+    <%= current_user.inverse_friends.count %>
+  </button>
+</div>
+
+<div class="modal fade" id="followed_by" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Followed By</h4>
+      </div>
+      <div class="modal-body">
+        <% current_user.inverse_friends.each do |user| %>
+          <li>
+            <%= user.first_name %>
+          </li>
+        <% end %>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
