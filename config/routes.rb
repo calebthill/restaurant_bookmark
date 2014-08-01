@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get "/chart" => 'favorite_restaurants#chart'
 
+  get "/followers" => 'user#followers'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
