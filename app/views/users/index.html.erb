@@ -1,6 +1,7 @@
 <div class="col-md-4 col-sm-6 col-xs-12">
   <h2>All Users</h2>
 
+
   <form role="search">
     <div class="input-group">
       <%= form_tag(users_path, method: :get, class: "form-inline") do %>
@@ -11,6 +12,7 @@
       </div>
     </div>
   </form>
+
 
   <% @users.each do |user| %>
     <li class = "list_items">
