@@ -34,4 +34,12 @@ RSpec.describe Restaurant, :type => :model do
       expect(restaurant.is_favorite?(user)).to eq(false)
     end
   end
+
+  describe "full_address" do
+    it "Should return the full address of a restaurant" do
+      restaurant = FactoryGirl.create(:restaurant)
+
+      expect(restaurant.full_address).to eq("#{restaurant.address} #{restaurant.city} #{restaurant.state} #{restaurant.zipcode}")
+    end
+  end
 end
