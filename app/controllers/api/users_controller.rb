@@ -12,7 +12,7 @@ class API::UsersController < ApplicationController
     end
 
     respond_to do |format|
-      format.json { render :json => @users_api_info}
+      format.json { render json: @users_api_info}
     end
   end
 end
