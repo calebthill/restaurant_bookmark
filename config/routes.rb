@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   # Namespace for API
   namespace :api do
-    resources :users, only: [:index, :create, :new, :show]
+    resources :users, only: [:index], :defaults => { :format => 'json' }
   end
 
   root 'pages#home'
