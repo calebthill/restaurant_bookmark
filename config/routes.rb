@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:index, :new, :create, :show] do
     resources :comments, only: [:create, :show ]
   end
+  # Namespace for API
+  namespace :api do
+    resources :users, only: [:index, :create, :new, :show]
+  end
 
   root 'pages#home'
 
