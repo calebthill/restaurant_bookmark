@@ -1,4 +1,6 @@
 class API::UsersController < ApplicationController
+  http_basic_authenticate_with name: 'admin', password: 'cyclops17'
+
   def index
     @users_api_info = Array.new
     @users = User.all
