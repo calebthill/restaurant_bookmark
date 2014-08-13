@@ -1,4 +1,6 @@
 class API::UsersController < ApplicationController
+  before_action :restrict_access
+
   def index
     @users_api_info = Array.new
     @users = User.all
@@ -14,5 +16,12 @@ class API::UsersController < ApplicationController
     respond_to do |format|
       format.json { render json: @users_api_info}
     end
+  end
+
+  private
+
+  def restrict_access
+    api_key = APIKey.find_by_access_token(params[:access_token])
+    head :unauthorize unless api_key
   end
 end
